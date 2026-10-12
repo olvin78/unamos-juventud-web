@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donaciones — Juventud Renovadora UNAMOS</title>
+  <meta name="description"
+    content="Información sobre las formas de colaboración con Juventud Renovadora de Unamos. Sin métodos de pago habilitados.">
+  <meta name="theme-color" content="#F97316">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Juventud Renovadora UNAMOS">
+  <meta property="og:title" content="Donaciones — Juventud Renovadora UNAMOS">
+  <meta property="og:description"
+    content="Información sobre las formas de colaboración con Juventud Renovadora de Unamos. Sin métodos de pago habilitados.">
+  <meta property="og:locale" content="es_NI">
+  <link rel="icon" type="image/svg+xml" href="../static/img/logos/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../static/css/output.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+
+<body>
+  <a class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-tinta focus:shadow-lg"
+    href="#contenido">Saltar al contenido</a>
+  <header id="site-header" class="site-header is-solid">
+    <div class="header-inner mx-auto flex max-w-[1280px] items-center justify-between px-6 md:px-10">
+      <a href="index.html" class="flex items-center gap-3" aria-label="Juventud Renovadora UNAMOS, ir al inicio">
+        <span
+          class="grid h-11 w-11 place-items-center rounded-xl bg-naranja font-display text-lg font-extrabold text-white">JR</span>
+        <span class="leading-none">
+          <span class="block font-display text-[0.8rem] font-extrabold uppercase tracking-[0.16em]">Juventud
+            Renovadora</span>
+          <span class="mt-1 block text-[0.62rem] font-semibold uppercase tracking-[0.34em] opacity-70">Unamos</span>
+        </span>
+      </a>
+
+      <nav class="hidden items-center gap-8 xl:flex" aria-label="Navegación principal">
+        <a class="nav-link" href="index.html">Inicio</a><a class="nav-link" href="nosotros.html">Quiénes somos</a><a
+          class="nav-link" href="actualidad.html">Actualidad</a><a class="nav-link"
+          href="actividades.html">Actividades</a><a class="nav-link" href="medioambiente.html">Medioambiente</a><a
+          class="nav-link" href="contacto.html">Contacto</a>
+        <a class="btn btn-primary" href="donaciones.html" aria-current="page">Donaciones</a>
+      </nav>
+
+      <button id="menu-toggle" class="menu-toggle xl:hidden" type="button" aria-expanded="false"
+        aria-controls="menu-panel" aria-label="Abrir menú">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M4 5h16" />
+          <path d="M4 12h16" />
+          <path d="M4 19h16" />
+        </svg>
+      </button>
+    </div>
+
+    <div id="menu-panel" class="menu-panel xl:hidden">
+      <nav class="flex flex-col" aria-label="Navegación móvil">
+        <a class="menu-item" href="index.html">Inicio</a><a class="menu-item" href="nosotros.html">Quiénes
+          somos</a><a class="menu-item" href="actualidad.html">Actualidad</a><a class="menu-item"
+          href="actividades.html">Actividades</a><a class="menu-item" href="medioambiente.html">Medioambiente</a><a
+          class="menu-item" href="contacto.html">Contacto</a>
+        <a class="menu-item" href="donaciones.html" aria-current="page">Donaciones</a>
+      </nav>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a class="btn btn-primary w-full sm:w-auto" href="donaciones.html">Donaciones</a>
+        <a class="btn btn-outline w-full sm:w-auto" href="contacto.html">Contacto</a>
+      </div>
+      <p class="mt-10 text-[0.7rem] font-semibold uppercase tracking-[0.3em] text-gris/60">Unamos · Nicaragua</p>
+    </div>
+  </header>
+  <main id="contenido" class="pt-[var(--header-h)]">
+    <!-- HERO -->
+    <section class="hero-banda" aria-labelledby="titulo-pagina">
+      <img src="../static/img/banners/Semilla de esperanza al amanecer.png"
+        alt="Brote verde creciendo junto a un lago, con un volcán al amanecer. Ilustración."
+        class="hero-banda__img" width="2048" height="768" fetchpriority="high" decoding="async">
+      <div class="hero-banda__sombra" aria-hidden="true"></div>
+
+      <div class="relative z-10 mx-auto w-full max-w-[1280px] px-6 pb-12 pt-32 md:px-10 md:pb-14 md:pt-40">
+        <div class="hero-rule" aria-hidden="true" data-reveal><i></i><i></i><i></i></div>
+        <p class="eyebrow eyebrow--light" data-reveal>Donaciones</p>
+        <h1 id="titulo-pagina"
+          class="mt-4 max-w-3xl font-display text-[clamp(2.1rem,5vw,3.6rem)] font-extrabold leading-[1.08] tracking-tight text-white"
+          data-reveal style="--reveal-delay:90ms">Apoya las actividades de la juventud</h1>
+        <p class="mt-5 max-w-2xl text-base leading-relaxed text-white/85 md:text-lg" data-reveal
+          style="--reveal-delay:150ms">
+          Cada aporte fortalece la formación, la participación y los espacios de la juventud de Unamos.
+          Esta página es informativa: todavía no hay pagos habilitados.
+        </p>
+        <div class="mt-7 flex flex-wrap gap-3" data-reveal style="--reveal-delay:240ms">
+          <span class="chip bg-white/12 text-white ring-1 ring-white/25">Sin pagos habilitados</span>
+          <span class="chip bg-white/12 text-white ring-1 ring-white/25">Colaboración clara y transparente</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- FORMAS DE COLABORAR -->
+    <section id="formas" class="mx-auto max-w-[1280px] px-6 py-20 md:px-10 md:py-24">
+      <div class="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+        <div>
+          <p class="eyebrow" data-reveal>Colaborar</p>
+          <h2
+            class="mt-4 max-w-xl font-display text-[clamp(1.8rem,3.4vw,2.6rem)] font-extrabold leading-tight tracking-tight"
+            data-reveal>Cómo puedes contribuir</h2>
+        </div>
+        <p class="max-w-md text-[0.95rem] leading-relaxed text-gris md:text-justify md:hyphens-auto" data-reveal style="--reveal-delay:90ms">
+          Tres vías de colaboración que la organización está preparando. Ninguna tiene importes,
+          cuentas ni condiciones publicadas todavía.
+        </p>
+      </div>
+
+      <div class="mt-12 grid gap-10 border-t border-tinta/15 pt-10 sm:grid-cols-2 lg:grid-cols-3 lg:gap-0">
+        <article class="lg:border-r lg:border-tinta/15 lg:pr-10" data-reveal>
+          <span class="grid h-12 w-12 place-items-center rounded-2xl bg-naranja/12 text-naranja"><svg
+              xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path
+                d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+            </svg></span>
+          <p class="mt-6 font-display text-sm font-extrabold uppercase tracking-[0.18em] text-naranja md:text-justify md:hyphens-auto">01</p>
+          <h3 class="mt-2 font-display text-xl font-bold">Aportes puntuales</h3>
+          <p class="mt-3 text-[0.95rem] leading-relaxed text-gris md:text-justify md:hyphens-auto">
+            Vía de colaboración económica directa con la organización. Su configuración, sus importes
+            y sus condiciones están pendientes de confirmación institucional.
+          </p>
+          <span class="chip chip--demo mt-4">Pendiente de confirmar</span>
+        </article>
+
+        <article class="lg:border-r lg:border-tinta/15 lg:px-10" data-reveal style="--reveal-delay:90ms">
+          <span class="grid h-12 w-12 place-items-center rounded-2xl bg-azul/12 text-azul"><svg
+              xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+            </svg></span>
+          <p class="mt-6 font-display text-sm font-extrabold uppercase tracking-[0.18em] text-azul md:text-justify md:hyphens-auto">02</p>
+          <h3 class="mt-2 font-display text-xl font-bold">Colaboración con actividades</h3>
+          <p class="mt-3 text-[0.95rem] leading-relaxed text-gris md:text-justify md:hyphens-auto">
+            Apoyo en la organización de jornadas, talleres y encuentros. Los requisitos y el circuito
+            de inscripción se publicarán cuando estén definidos.
+          </p>
+          <span class="chip chip--demo mt-4">Pendiente de confirmar</span>
+        </article>
+
+        <article class="sm:col-span-2 lg:col-span-1 lg:pl-10" data-reveal style="--reveal-delay:180ms">
+          <span class="grid h-12 w-12 place-items-center rounded-2xl bg-verde/12 text-verde"><svg
+              xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="m3 11 18-5v12L3 14v-3z" />
+              <path d="M11.6 16.8a3 3 0 1 1-5.8-1.6" />
+            </svg></span>
+          <p class="mt-6 font-display text-sm font-extrabold uppercase tracking-[0.18em] text-verde md:text-justify md:hyphens-auto">03</p>
+          <h3 class="mt-2 font-display text-xl font-bold">Difusión y apoyo en especie</h3>
+          <p class="mt-3 text-[0.95rem] leading-relaxed text-gris md:text-justify md:hyphens-auto">
+            Compartir convocatorias, ofrecer espacios, materiales o servicios. Las condiciones de este
+            tipo de colaboración están pendientes de definir.
+          </p>
+          <span class="chip chip--demo mt-4">Pendiente de confirmar</span>
+        </article>
+      </div>
+
+      <div class="aviso mt-12 max-w-3xl" data-reveal>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="10" />
+          <path d="M12 16v-4" />
+          <path d="M12 8h.01" />
+        </svg>
+        <p class="md:text-justify md:hyphens-auto"><strong>Información pendiente de confirmación.</strong> Aún no existen cuentas bancarias,
+          métodos de pago, enlaces de donación ni importes publicados. Cualquier dato de este tipo que
+          aparezca en el futuro será validado previamente por la organización.</p>
+      </div>
+    </section>
+
+    <!-- MEDIOS DE PAGO (PREVISTOS) -->
+    <section id="medios-pago" class="border-y border-tinta/10 bg-hueso">
+      <div class="mx-auto max-w-[1280px] px-6 py-20 md:px-10 md:py-24">
+        <div class="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+          <div>
+            <p class="eyebrow" data-reveal>Medios de pago</p>
+            <h2 class="mt-4 max-w-xl font-display text-[clamp(1.8rem,3.4vw,2.6rem)] font-extrabold leading-tight tracking-tight"
+              data-reveal>Cómo podrás colaborar</h2>
+          </div>
+          <p class="max-w-md text-[0.95rem] leading-relaxed text-gris md:text-justify md:hyphens-auto" data-reveal style="--reveal-delay:90ms">
+            Estas son las vías de pago previstas para cuando el apartado de donaciones se habilite.
+            Todavía no hay ningún enlace de pago activo en esta página.
+          </p>
+        </div>
+
+        <div class="mt-12 grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:gap-10">
+          <!-- Botones de pago -->
+          <div class="space-y-4" data-reveal>
+            <h3 class="font-display text-lg font-bold">Donar con un clic</h3>
+
+            <button type="button" data-pago="stripe"
+              class="flex w-full items-center justify-center gap-3 rounded-2xl bg-[#635BFF] px-6 py-4 font-display text-base font-extrabold text-white shadow-[0_18px_36px_-24px_rgba(99,91,255,0.9)] transition hover:brightness-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#635BFF]">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
+              Donar con Stripe
+            </button>
+
+            <button type="button" data-pago="paypal"
+              class="flex w-full items-center justify-center gap-3 rounded-2xl bg-[#003087] px-6 py-4 font-display text-base font-extrabold text-white shadow-[0_18px_36px_-24px_rgba(0,48,135,0.9)] transition hover:brightness-110 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#003087]">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 18V6"/></svg>
+              Donar con PayPal
+            </button>
+
+            <div class="rounded-[18px] border border-tinta/12 bg-white p-5">
+              <div class="flex items-start gap-3">
+                <span class="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-naranja/12 text-naranja">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 18v-7"/><path d="M11.12 2.198a2 2 0 0 1 1.76.006l7.866 3.847c.476.233.31.949-.22.949H3.474c-.53 0-.695-.716-.22-.949z"/><path d="M14 18v-7"/><path d="M18 18v-7"/><path d="M3 22h18"/><path d="M6 18v-7"/></svg>
+                </span>
+                <div>
+                  <h4 class="font-display text-[1rem] font-bold">Transferencia bancaria</h4>
+                  <p class="mt-1 text-[0.9rem] leading-relaxed text-gris md:text-justify md:hyphens-auto">
+                    Depósito en córdobas o dólares. Las cuentas institucionales se publicarán
+                    cuando la organización las confirme.
+                  </p>
+                  <span class="chip chip--demo mt-3">Pendiente de confirmar</span>
+                </div>
+              </div>
+            </div>
+
+            <p class="text-xs leading-relaxed text-gris/75 md:text-justify md:hyphens-auto">
+              Importes y condiciones disponibles en cuanto la organización valide las cuentas.
+            </p>
+          </div>
+
+          <!-- Formulario de tarjeta -->
+          <form class="card" data-form-donacion data-reveal style="--reveal-delay:90ms">
+            <div class="card__body gap-4">
+              <div class="flex flex-wrap items-center justify-between gap-3">
+                <h3 class="flex items-center gap-2 font-display text-lg font-bold">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
+                  Donar con tarjeta
+                </h3>
+                <span class="chip chip--demo">Aún no conectado</span>
+              </div>
+
+              <div class="grid gap-4 sm:grid-cols-2">
+                <div class="field">
+                  <label for="don-monto">Monto (C$)</label>
+                  <input id="don-monto" name="monto" type="text" inputmode="numeric" required
+                    data-campo-don aria-describedby="error-don-monto" placeholder="500" autocomplete="off">
+                  <p class="mensaje-error" id="error-don-monto" role="alert"></p>
+                </div>
+                <div class="field">
+                  <label for="don-nombre">Nombre en la tarjeta</label>
+                  <input id="don-nombre" name="nombre" type="text" required minlength="3" data-campo-don
+                    aria-describedby="error-don-nombre" placeholder="Nombre y apellidos" autocomplete="cc-name">
+                  <p class="mensaje-error" id="error-don-nombre" role="alert"></p>
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="don-tarjeta">Número de tarjeta</label>
+                <input id="don-tarjeta" name="tarjeta" type="text" inputmode="numeric" required
+                  data-campo-don data-formato="tarjeta" maxlength="19" aria-describedby="error-don-tarjeta"
+                  placeholder="0000 0000 0000 0000" autocomplete="cc-number">
+                <p class="mensaje-error" id="error-don-tarjeta" role="alert"></p>
+              </div>
+
+              <div class="grid gap-4 sm:grid-cols-2">
+                <div class="field">
+                  <label for="don-caducidad">Fecha de caducidad</label>
+                  <input id="don-caducidad" name="caducidad" type="text" inputmode="numeric" required
+                    data-campo-don data-formato="caducidad" maxlength="5" aria-describedby="error-don-caducidad"
+                    placeholder="MM/AA" autocomplete="cc-exp">
+                  <p class="mensaje-error" id="error-don-caducidad" role="alert"></p>
+                </div>
+                <div class="field">
+                  <label for="don-cvc">CVC</label>
+                  <input id="don-cvc" name="cvc" type="text" inputmode="numeric" required data-campo-don
+                    data-formato="cvc" maxlength="4" aria-describedby="error-don-cvc" placeholder="123"
+                    autocomplete="cc-csc">
+                  <p class="mensaje-error" id="error-don-cvc" role="alert"></p>
+                </div>
+              </div>
+
+              <button class="btn btn-primary w-full" type="submit">Donar ahora
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </button>
+
+              <p class="text-xs leading-relaxed text-gris/75 md:text-justify md:hyphens-auto">
+                Formulario de demostración: los datos se quedan en tu navegador, no se envían a
+                ningún servidor ni se procesa ningún cobro.
+              </p>
+            </div>
+          </form>
+        </div>
+
+        <div class="aviso mt-10 max-w-3xl" data-reveal>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+          <p class="md:text-justify md:hyphens-auto"><strong>Ninguna vía de pago está activa.</strong> Los botones y el formulario son
+          una maqueta: no hay cuentas ni pasarelas conectadas. Cuando el apartado se habilite, los
+          datos reales se publicarán aquí y en los canales oficiales.</p>
+        </div>
+
+        <div class="mt-4 max-w-3xl" data-donacion-estado role="status" aria-live="polite" tabindex="-1" hidden></div>
+      </div>
+    </section>
+
+    <!-- GALERÍA: QUÉ HACE POSIBLE TU APOYO -->
+    <section class="bg-tinta text-white">
+      <div class="mx-auto max-w-[1280px] px-6 py-16 md:px-10 md:py-20">
+        <div class="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+          <div>
+            <p class="eyebrow eyebrow--light" data-reveal>Tu apoyo</p>
+            <h2 class="mt-4 font-display text-[clamp(1.7rem,3vw,2.4rem)] font-extrabold tracking-tight text-white"
+              data-reveal>Qué hace posible colaborar</h2>
+          </div>
+          <p class="max-w-md text-sm leading-relaxed text-white/60 md:text-justify md:hyphens-auto" data-reveal style="--reveal-delay:90ms">
+            Ilustraciones de los ámbitos en los que se orienta la colaboración: aportes, trabajo en equipo
+            y difusión de convocatorias.
+          </p>
+        </div>
+
+        <div class="mt-10 grid gap-6 md:grid-cols-3">
+          <figure data-reveal>
+            <span class="fig-zoom">
+              <img src="../static/img/donaciones/juventud_renovadora_aportes.jpg"
+                alt="Frasco de vidrio lleno de monedas con un brote verde, sobre una mesa al amanecer con un volcán al fondo. Ilustración."
+                class="aspect-[4/3] w-full object-cover" width="643" height="591" loading="lazy" decoding="async">
+            </span>
+            <figcaption class="mt-3 text-xs text-white/60"><strong class="text-white">Aportes</strong> · apoyo económico
+              pendiente de habilitar</figcaption>
+          </figure>
+          <figure data-reveal style="--reveal-delay:90ms">
+            <span class="fig-zoom">
+              <img src="../static/img/donaciones/juventud_renovadora_actividades.jpg"
+                alt="Manos escribiendo con rotuladores en notas de colores sobre una mesa al aire libre, con un volcán y un lago al fondo. Ilustración."
+                class="aspect-[4/3] w-full object-cover" width="665" height="591" loading="lazy" decoding="async">
+            </span>
+            <figcaption class="mt-3 text-xs text-white/60"><strong class="text-white">Actividades</strong> · jornadas,
+              talleres y encuentros</figcaption>
+          </figure>
+          <figure data-reveal style="--reveal-delay:180ms">
+            <span class="fig-zoom">
+              <img src="../static/img/donaciones/juventud_renovadora_difusion.jpg"
+                alt="Público con las manos en alto en un concierto al aire libre al atardecer, con un volcán al fondo. Ilustración."
+                class="aspect-[4/3] w-full object-cover" width="644" height="591" loading="lazy" decoding="async">
+            </span>
+            <figcaption class="mt-3 text-xs text-white/60"><strong class="text-white">Difusión</strong> · compartir
+              convocatorias y redes</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- TU APORTE SOSTIENE -->
+    <section class="border-y border-naranja/25 bg-naranja-suave">
+      <div class="mx-auto grid max-w-[1280px] gap-12 px-6 py-20 md:px-10 md:py-24 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
+        <div>
+          <p class="eyebrow" data-reveal>Transparencia</p>
+          <h2 class="mt-4 font-display text-[clamp(1.8rem,3.4vw,2.6rem)] font-extrabold leading-tight tracking-tight"
+            data-reveal>Tu aporte sostiene</h2>
+          <p class="mt-5 text-[1rem] leading-relaxed text-gris md:text-justify md:hyphens-auto" data-reveal style="--reveal-delay:90ms">
+            Estas son las líneas de trabajo que la colaboración permitirá mantener cuando el apartado
+            de donaciones esté habilitado. No se publican cifras ni destinos concretos hasta que la
+            organización los confirme.
+          </p>
+          <a class="btn btn-dark mt-8" href="contacto.html" data-reveal style="--reveal-delay:180ms">
+            Consultar antes de colaborar <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 12h14" />
+              <path d="m12 5 7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+
+        <ul class="space-y-0" data-reveal style="--reveal-delay:120ms">
+          <li class="flex items-start gap-4 border-b border-naranja/20 py-5">
+            <span class="mt-0.5 grid h-8 w-8 shrink-0 place-items-center rounded-full bg-naranja text-white"><svg
+                xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                aria-hidden="true">
+                <path d="M20 6 9 17l-5-5" />
+              </svg></span>
+            <div>
+              <h3 class="font-display text-[1.05rem] font-bold">Formación política y ciudadana</h3>
+              <p class="mt-1 text-[0.95rem] leading-relaxed text-gris md:text-justify md:hyphens-auto">Materiales, ponencias y sesiones para formar a
+                jóvenes en política y ciudadanía.</p>
+            </div>
+          </li>
+          <li class="flex items-start gap-4 border-b border-naranja/20 py-5">
+            <span class="mt-0.5 grid h-8 w-8 shrink-0 place-items-center rounded-full bg-naranja text-white"><svg
+                xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                aria-hidden="true">
+                <path d="M20 6 9 17l-5-5" />
+              </svg></span>
+            <div>
+              <h3 class="font-display text-[1.05rem] font-bold">Espacios y logística</h3>
+              <p class="mt-1 text-[0.95rem] leading-relaxed text-gris md:text-justify md:hyphens-auto">Salas, transporte y lo necesario para realizar
+                jornadas, talleres y encuentros.</p>
+            </div>
+          </li>
+          <li class="flex items-start gap-4 border-b border-naranja/20 py-5">
+            <span class="mt-0.5 grid h-8 w-8 shrink-0 place-items-center rounded-full bg-naranja text-white"><svg
+                xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                aria-hidden="true">
+                <path d="M20 6 9 17l-5-5" />
+              </svg></span>
+            <div>
+              <h3 class="font-display text-[1.05rem] font-bold">Nuevos liderazgos</h3>
+              <p class="mt-1 text-[0.95rem] leading-relaxed text-gris md:text-justify md:hyphens-auto">Acompañamiento a jóvenes que representan a sus
+                comunidades e impulsan cambios.</p>
+            </div>
+          </li>
+          <li class="flex items-start gap-4 py-5">
+            <span class="mt-0.5 grid h-8 w-8 shrink-0 place-items-center rounded-full bg-naranja text-white"><svg
+                xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+                aria-hidden="true">
+                <path d="M20 6 9 17l-5-5" />
+              </svg></span>
+            <div>
+              <h3 class="font-display text-[1.05rem] font-bold">Difusión de convocatorias</h3>
+              <p class="mt-1 text-[0.95rem] leading-relaxed text-gris md:text-justify md:hyphens-auto">Comunicación para que cada actividad y
+                convocatoria llegue a más jóvenes.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- PREGUNTAS -->
+    <section id="preguntas" class="mx-auto max-w-[1280px] px-6 py-20 md:px-10 md:py-24">
+      <div class="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
+        <div>
+          <p class="eyebrow" data-reveal>Preguntas frecuentes</p>
+          <h2 class="mt-5 font-display text-[clamp(1.9rem,3.5vw,2.6rem)] font-extrabold leading-tight tracking-tight"
+            data-reveal>Antes de colaborar</h2>
+          <p class="mt-5 text-[0.95rem] leading-relaxed text-gris md:text-justify md:hyphens-auto" data-reveal style="--reveal-delay:90ms">
+            Respuestas breves mientras el apartado de donaciones se prepara.
+          </p>
+        </div>
+
+        <ul class="faq" data-faq data-reveal>
+          <li class="faq__item">
+            <h3>
+              <button class="faq__pregunta" type="button" aria-expanded="false" aria-controls="faq-1" id="faq-btn-1">
+                <span>¿Ya puedo hacer una donación?</span>
+                <span class="faq__icono" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                    height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m6 9 6 6 6-6" />
+                  </svg></span>
+              </button>
+            </h3>
+            <div class="faq__respuesta" id="faq-1" role="region" aria-labelledby="faq-btn-1" hidden>
+              <p class="md:text-justify md:hyphens-auto">No. Esta página es informativa: todavía no hay cuentas, enlaces ni métodos de pago
+                habilitados. Cuando existan, se publicarán aquí y se anunciarán en los canales oficiales.</p>
+            </div>
+          </li>
+
+          <li class="faq__item">
+            <h3>
+              <button class="faq__pregunta" type="button" aria-expanded="false" aria-controls="faq-2" id="faq-btn-2">
+                <span>¿Cómo sabré que un dato de donación es oficial?</span>
+                <span class="faq__icono" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                    height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m6 9 6 6 6-6" />
+                  </svg></span>
+              </button>
+            </h3>
+            <div class="faq__respuesta" id="faq-2" role="region" aria-labelledby="faq-btn-2" hidden>
+              <p class="md:text-justify md:hyphens-auto">Cualquier cuenta, enlace o importe futuro será validado por la organización antes de
+                publicarse en esta web y en la
+                <a class="font-semibold text-azul underline-offset-2 hover:underline" href="https://unamosnic.org/"
+                  target="_blank" rel="noopener noreferrer">web oficial de Unamos<span class="sr-only"> (se abre en una
+                    pestaña nueva)</span></a>.
+                Desconfía de datos compartidos por terceros.
+              </p>
+            </div>
+          </li>
+
+          <li class="faq__item">
+            <h3>
+              <button class="faq__pregunta" type="button" aria-expanded="false" aria-controls="faq-3" id="faq-btn-3">
+                <span>¿Puedo colaborar de otra forma, sin dinero?</span>
+                <span class="faq__icono" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                    height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m6 9 6 6 6-6" />
+                  </svg></span>
+              </button>
+            </h3>
+            <div class="faq__respuesta" id="faq-3" role="region" aria-labelledby="faq-btn-3" hidden>
+              <p class="md:text-justify md:hyphens-auto">Sí. Difundir convocatorias, ofrecer espacios, materiales o tiempo de trabajo son formas
+                de colaborar. Escríbenos desde la página de
+                <a class="font-semibold text-azul underline-offset-2 hover:underline" href="contacto.html">contacto</a>
+                y te indicamos los pasos.
+              </p>
+            </div>
+          </li>
+
+          <li class="faq__item">
+            <h3>
+              <button class="faq__pregunta" type="button" aria-expanded="false" aria-controls="faq-4" id="faq-btn-4">
+                <span>¿Se informará de en qué se usa el apoyo?</span>
+                <span class="faq__icono" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                    height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m6 9 6 6 6-6" />
+                  </svg></span>
+              </button>
+            </h3>
+            <div class="faq__respuesta" id="faq-4" role="region" aria-labelledby="faq-btn-4" hidden>
+              <p class="md:text-justify md:hyphens-auto">La transparencia es un requisito del apartado: cuando esté habilitado, se publicarán
+                sus condiciones y los destinos de los aportes. De momento solo se comunican las líneas
+                de trabajo que la colaboración sostendría.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="bg-tinta text-white">
+      <div
+        class="mx-auto flex max-w-[1280px] flex-col items-start gap-6 px-6 py-16 md:flex-row md:items-center md:justify-between md:px-10 md:py-20">
+        <div>
+          <p class="eyebrow eyebrow--light" data-reveal>¿Quieres colaborar?</p>
+          <h2 class="mt-4 font-display text-[clamp(1.6rem,3vw,2.2rem)] font-extrabold tracking-tight text-white"
+            data-reveal>Cuéntanos tu interés</h2>
+          <p class="mt-3 max-w-xl text-white/70 md:text-justify md:hyphens-auto" data-reveal style="--reveal-delay:90ms">
+            Déjanos tu mensaje a través del formulario de contacto. El envío estará disponible cuando el
+            canal institucional esté configurado.
+          </p>
+        </div>
+        <a class="btn btn-primary shrink-0" href="contacto.html" data-reveal style="--reveal-delay:150ms">Ir a contacto
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 12h14" />
+            <path d="m12 5 7 7-7 7" />
+          </svg></a>
+      </div>
+    </section>
+  </main>
+  <footer class="bg-tinta text-white/70">
+    <div class="tricolor-edge" aria-hidden="true"><i></i><i></i><i></i></div>
+    <div class="mx-auto grid max-w-[1280px] gap-12 px-6 py-16 md:grid-cols-2 md:px-10 lg:grid-cols-4 lg:py-20">
+      <div>
+        <a href="index.html" class="flex items-center gap-3" aria-label="Juventud Renovadora UNAMOS, ir al inicio">
+          <span
+            class="grid h-11 w-11 place-items-center rounded-xl bg-naranja font-display text-lg font-extrabold text-white">JR</span>
+          <span class="leading-none text-white">
+            <span class="block font-display text-[0.8rem] font-extrabold uppercase tracking-[0.16em]">Juventud
+              Renovadora</span>
+            <span
+              class="mt-1 block text-[0.62rem] font-semibold uppercase tracking-[0.34em] text-white/60">Unamos</span>
+          </span>
+        </a>
+        <p class="mt-5 max-w-xs text-sm leading-relaxed text-white/55">
+          Espacio de información, participación y actividades de la juventud de Unamos, Nicaragua.
+        </p>
+      </div>
+
+      <nav aria-label="Navegación del pie">
+        <h2 class="text-[0.7rem] font-bold uppercase tracking-[0.24em] text-white/45">Navegación</h2>
+        <ul class="mt-5 space-y-3 text-sm">
+          <li><a class="transition hover:text-white" href="index.html">Inicio</a></li>
+          <li><a class="transition hover:text-white" href="nosotros.html">Quiénes somos</a></li>
+          <li><a class="transition hover:text-white" href="actualidad.html">Actualidad</a></li>
+          <li><a class="transition hover:text-white" href="actividades.html">Actividades</a></li>
+          <li><a class="transition hover:text-white" href="medioambiente.html">Medioambiente</a></li>
+          <li><a class="transition hover:text-white" href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <div>
+        <h2 class="text-[0.7rem] font-bold uppercase tracking-[0.24em] text-white/45">Información</h2>
+        <ul class="mt-5 space-y-3 text-sm">
+          <li><a class="transition hover:text-white" href="donaciones.html">Donaciones</a></li>
+          <li><a class="transition hover:text-white" href="contacto.html">Contacto</a></li>
+          <li><a class="transition hover:text-white" href="https://unamosnic.org/" target="_blank"
+              rel="noopener noreferrer">Web oficial de Unamos</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h2 class="text-[0.7rem] font-bold uppercase tracking-[0.24em] text-white/45">Canales oficiales</h2>
+        <ul class="mt-5 space-y-4 text-sm">
+          <li>
+            <a class="group flex items-center gap-3 transition hover:text-white"
+              href="https://www.instagram.com/unamosnica/" target="_blank" rel="noopener noreferrer">
+              <span
+                class="grid h-9 w-9 place-items-center rounded-lg bg-white/10 transition group-hover:bg-naranja"><svg
+                  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  aria-hidden="true">
+                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                  <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                </svg></span>
+              <span>Instagram</span>
+              <span class="opacity-60 transition group-hover:opacity-100"><svg xmlns="http://www.w3.org/2000/svg"
+                  width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M7 7h10v10" />
+                  <path d="M7 17 17 7" />
+                </svg></span>
+              <span class="sr-only">(se abre en una pestaña nueva)</span>
+            </a>
+          </li>
+          <li>
+            <a class="group flex items-center gap-3 transition hover:text-white"
+              href="https://www.facebook.com/share/1ADHnHSRpG/" target="_blank" rel="noopener noreferrer">
+              <span class="grid h-9 w-9 place-items-center rounded-lg bg-white/10 transition group-hover:bg-azul"><svg
+                  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  aria-hidden="true">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                </svg></span>
+              <span>Facebook</span>
+              <span class="opacity-60 transition group-hover:opacity-100"><svg xmlns="http://www.w3.org/2000/svg"
+                  width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M7 7h10v10" />
+                  <path d="M7 17 17 7" />
+                </svg></span>
+              <span class="sr-only">(se abre en una pestaña nueva)</span>
+            </a>
+          </li>
+          <li>
+            <a class="group flex items-center gap-3 transition hover:text-white" href="https://unamosnic.org/"
+              target="_blank" rel="noopener noreferrer">
+              <span
+                class="grid h-9 w-9 place-items-center rounded-lg bg-white/10 transition group-hover:bg-naranja"><svg
+                  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  aria-hidden="true">
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
+                  <path d="M2 12h20" />
+                </svg></span>
+              <span>Web oficial de Unamos</span>
+              <span class="opacity-60 transition group-hover:opacity-100"><svg xmlns="http://www.w3.org/2000/svg"
+                  width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M7 7h10v10" />
+                  <path d="M7 17 17 7" />
+                </svg></span>
+              <span class="sr-only">(se abre en una pestaña nueva)</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t border-white/10">
+      <div
+        class="mx-auto flex max-w-[1280px] flex-col gap-2 px-6 py-6 text-xs text-white/45 md:flex-row md:items-center md:justify-between md:px-10">
+        <p>© <span data-anio>2026</span> Juventud Renovadora · Unamos — Nicaragua</p>
+        <nav class="flex flex-wrap gap-x-5 gap-y-1" aria-label="Información legal">
+          <a class="transition hover:text-white" href="privacidad.html">Política de privacidad</a>
+          <a class="transition hover:text-white" href="aviso-legal.html">Aviso legal</a>
+          <a class="transition hover:text-white" href="cookies.html">Política de cookies</a>
+        </nav>
+        <p>Sitio en fase de desarrollo · Contenido institucional pendiente de completar</p>
+      </div>
+    </div>
+  </footer>
+  <script src="../static/js/vendor/lenis.min.js" defer></script>
+  <script src="../static/js/main.js" defer></script>
+</body>
+
+</html>
