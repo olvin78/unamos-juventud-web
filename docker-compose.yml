@@ -1,0 +1,9 @@
+services:
+  web:
+    build: .
+    ports:
+      - "8002:8000"
+    environment:
+      - DJANGO_DEBUG=True
+      - DJANGO_ALLOWED_HOSTS=*
+    restart: unless-stopped

@@ -27,6 +27,11 @@ urlpatterns = [
         serve,
         {"document_root": settings.BASE_DIR / "templates"},
     ),
+    re_path(
+        r"^static/(?P<path>.*)$",
+        serve,
+        {"document_root": settings.STATICFILES_DIRS[0]},
+    ),
     path(
         "favicon.ico",
         serve,
