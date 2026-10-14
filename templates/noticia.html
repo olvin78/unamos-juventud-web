@@ -77,7 +77,11 @@
     <!-- BANDA HERO (COMPACTA) -->
     <section class="border-b border-tinta/10 bg-hueso" aria-labelledby="titulo-pagina">
       <div class="mx-auto w-full max-w-[860px] px-6 pb-12 pt-12 md:px-10 md:pb-12 md:pt-12">
-        <p class="eyebrow" data-reveal>Actualidad · Detalle</p>
+        <div class="flex flex-wrap items-center justify-between gap-x-3 gap-y-1">
+          <p class="eyebrow" data-reveal>Actualidad · Detalle</p>
+          <a class="text-sm font-semibold text-gris transition hover:text-naranja"
+            href="/templates/actualidad.html">← Volver</a>
+        </div>
         <h1 id="titulo-pagina"
           class="mt-6 font-display text-[clamp(1.55rem,4.5vw,2.9rem)] font-extrabold leading-[1.15] tracking-tight"
           data-reveal style="--reveal-delay:90ms">{{ noticia.titulo }}</h1>
