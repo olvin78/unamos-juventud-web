@@ -1,0 +1,30 @@
+# Despliegue en node-cero (producción) — subdominio juventud-renovadora.olvinduarte.com
+# Igual que kudea: gunicorn + migrate + collectstatic al arrancar; datos en ./data.
+#
+#   docker compose -f docker-compose.yml -f docker-compose.node-cero.yml up -d --build
+#
+# La BD se siembra sola la primera vez (fixture contenido_inicial) si está vacía.
+# El proxy de node-cero enruta el subdominio a 127.0.0.1:8085 (ver nginx/ en el repo).
+services:
+  web:
+    build: .
+    restart: unless-stopped
+    command: >-
+      sh -c "python manage.py migrate --noinput
+      && (python manage.py shell -c 'from web.models import Noticia; exit(0 if Noticia.objects.exists() else 1)'
+      || python manage.py loaddata contenido_inicial)
+      && python manage.py collectstatic --noinput
+      && gunicorn config.wsgi:application --bind 0.0.0.0:8000 --workers 3 --timeout 120"
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      - DJANGO_DEBUG=False
+      - DJANGO_DB_PATH=/app/data/db.sqlite3
+      - DJANGO_ALLOWED_HOSTS=juventud-renovadora.olvinduarte.com,www.juventud-renovadora.olvinduarte.com,127.0.0.1,localhost,192.168.1.51
+      - DJANGO_CSRF_TRUSTED_ORIGINS=https://juventud-renovadora.olvinduarte.com,https://www.juventud-renovadora.olvinduarte.com
+    ports:
+      - "127.0.0.1:8085:8000"
+    volumes:
+      - ./data:/app/data
+      - ./staticfiles:/app/staticfiles

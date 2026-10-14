@@ -10,22 +10,22 @@
 {% block content %}
 
     <section class="border-b border-tinta/10 bg-hueso">
-      <div class="mx-auto max-w-[1280px] px-6 py-16 md:px-10 md:py-24">
+      <div class="contenedor py-16 md:py-24">
         <p class="eyebrow" data-reveal>Información legal</p>
-        <h1 class="mt-5 max-w-3xl font-display text-[clamp(2.2rem,5vw,3.8rem)] font-extrabold leading-[1.08] tracking-tight" data-reveal>Política de cookies</h1>
-        <p class="lead mt-6 md:text-justify md:hyphens-auto" data-reveal style="--reveal-delay:90ms">
+        <h1 class="titulo-pagina" data-reveal>Política de cookies</h1>
+        <p class="lead texto-justo mt-6" data-reveal style="--reveal-delay:90ms">
           Uso de cookies y tecnologías similares en este sitio.
         </p>
       </div>
     </section>
 
-    <section class="mx-auto max-w-[1280px] px-6 py-20 md:px-10 md:py-24">
-      <div class="max-w-3xl space-y-4 text-[1rem] leading-relaxed text-gris">
-        <p class="md:text-justify md:hyphens-auto" data-reveal>
+    <section class="contenedor py-20 md:py-24">
+      <div class="max-w-3xl space-y-4 texto-cuerpo">
+        <p class="texto-justo" data-reveal>
           Este apartado se encuentra en preparación. El texto completo de la política de cookies
           se publicará cuando esté validado por la organización.
         </p>
-        <p class="md:text-justify md:hyphens-auto" data-reveal>
+        <p class="texto-justo" data-reveal>
           Mientras tanto, puedes consultar la
           <a class="link-arrow link-arrow--azul" href="{% url 'privacidad' %}">política de privacidad</a> o el
           <a class="link-arrow link-arrow--azul" href="{% url 'aviso-legal' %}">aviso legal</a>.

@@ -13,10 +13,10 @@ dato de contacto que no esté confirmado.
 | `templates/nosotros.html` | Trayectoria | Ampliar la cronología con hitos confirmados por la organización |
 | `templates/contacto.html` | Correo institucional | Dirección de correo oficial |
 | `templates/donaciones.html` | Modalidades de colaboración | Condiciones revisadas legalmente |
-| `index.html` · `templates/medioambiente.html` | Sección y página de medioambiente | Texto editorial de propuesta, 3 puntos y objetivos ambientales (redactados como borrador, pendientes de validación oficial) |
-| `index.html` | «Nuestra juventud» (01 Educación · 02 Cultura · 03 Participación) | Frases editoriales de apoyo y nota de imágenes ilustrativas, pendientes de validación |
-| `index.html` | «¿Quiénes somos?» y «Mantengamos el contacto» | Texto institucional definitivo cuando la organización lo entregue |
-| `index.html` | Hero (foto `juventud-renovadora-oficial.banner.png`) | Verificar el origen de la imagen propia (ya no lleva crédito visible: los avisos «Foto: … · CC BY…» se retiraron de todas las páginas) |
+| `templates/index.html` · `templates/medioambiente.html` | Sección y página de medioambiente | Texto editorial de propuesta, 3 puntos y objetivos ambientales (redactados como borrador, pendientes de validación oficial) |
+| `templates/index.html` | «Nuestra juventud» (01 Educación · 02 Cultura · 03 Participación) | Frases editoriales de apoyo y nota de imágenes ilustrativas, pendientes de validación |
+| `templates/index.html` | «¿Quiénes somos?» y «Mantengamos el contacto» | Texto institucional definitivo cuando la organización lo entregue |
+| `templates/index.html` | Hero (foto `juventud-renovadora-oficial.banner.png`) | Verificar el origen de la imagen propia (ya no lleva crédito visible: los avisos «Foto: … · CC BY…» se retiraron de todas las páginas) |
 
 ## Contenido pendiente en general
 
@@ -30,9 +30,9 @@ dato de contacto que no esté confirmado.
   (sección del home y `templates/medioambiente.html`) es **contenido editorial de propuesta**,
   marcado como tal en la propia página, pendiente de validación por la organización.
 - **Logotipo oficial** (ahora se usa un logotipo tipográfico temporal `JR`).
-- **Noticias y comunicados reales** → sustituir `DEMO_NOTICIAS` en `static/js/main.js`.
-- **Actividades reales y calendario** → sustituir `DEMO_ACTIVIDADES` en `static/js/main.js`.
-- **Efemérides** → `EFEMERIDES` en `static/js/main.js` (fechas públicas verificables: Rubén
+- **Noticias y comunicados reales** → sustituir los registros en `/admin/` → Noticias.
+- **Actividades reales y calendario** → sustituir los registros en `/admin/` → Actividades.
+- **Efemérides** → `/admin/` → Efemérides (fechas públicas verificables: Rubén
   Darío, San Sebastián de Diriamba, Medio Ambiente, Juventud e Independencia de Centroamérica).
   Añadir o corregir entradas actualiza la portada sin tocar el HTML.
 - **Canales propios de Juventud Renovadora**: no se han creado cuentas nuevas; en

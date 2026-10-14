@@ -1,0 +1,75 @@
+<footer class="pie">
+  <div class="tricolor-edge" aria-hidden="true"><i></i><i></i><i></i></div>
+
+  <div class="pie__grid">
+    <div>
+      {% include "partials/logo.html" %}
+      <p class="pie__intro">
+        Espacio de información, participación y actividades de la juventud de Unamos, Nicaragua.
+      </p>
+    </div>
+
+    <nav aria-label="Navegación del pie">
+      <h2 class="pie__titulo">Navegación</h2>
+      <ul class="pie__lista">
+        <li><a class="pie__enlace" href="{% url 'inicio' %}">Inicio</a></li>
+        <li><a class="pie__enlace" href="{% url 'nosotros' %}">Quiénes somos</a></li>
+        <li><a class="pie__enlace" href="{% url 'actualidad' %}">Actualidad</a></li>
+        <li><a class="pie__enlace" href="{% url 'actividades' %}">Actividades</a></li>
+        <li><a class="pie__enlace" href="{% url 'medioambiente' %}">Medioambiente</a></li>
+        <li><a class="pie__enlace" href="{% url 'contacto' %}">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <div>
+      <h2 class="pie__titulo">Información</h2>
+      <ul class="pie__lista">
+        <li><a class="pie__enlace" href="{% url 'donaciones' %}">Donaciones</a></li>
+        <li><a class="pie__enlace" href="{% url 'contacto' %}">Contacto</a></li>
+        <li><a class="pie__enlace" href="https://unamosnic.org/" target="_blank" rel="noopener noreferrer">Web oficial de Unamos</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h2 class="pie__titulo">Canales oficiales</h2>
+      <ul class="pie__lista pie__lista--social">
+        <li>
+          <a class="pie__social" href="https://www.instagram.com/unamosnica/" target="_blank" rel="noopener noreferrer">
+            <span class="pie__social-icono"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-instagram"></use></svg></span>
+            <span>Instagram</span>
+            <span class="pie__flecha"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-externo"></use></svg></span>
+            <span class="sr-only">(se abre en una pestaña nueva)</span>
+          </a>
+        </li>
+        <li>
+          <a class="pie__social pie__social--azul" href="https://www.facebook.com/share/1ADHnHSRpG/" target="_blank" rel="noopener noreferrer">
+            <span class="pie__social-icono"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-facebook"></use></svg></span>
+            <span>Facebook</span>
+            <span class="pie__flecha"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-externo"></use></svg></span>
+            <span class="sr-only">(se abre en una pestaña nueva)</span>
+          </a>
+        </li>
+        <li>
+          <a class="pie__social" href="https://unamosnic.org/" target="_blank" rel="noopener noreferrer">
+            <span class="pie__social-icono"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-globo"></use></svg></span>
+            <span>Web oficial de Unamos</span>
+            <span class="pie__flecha"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-externo"></use></svg></span>
+            <span class="sr-only">(se abre en una pestaña nueva)</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="pie__barra">
+    <div class="pie__barra-inner">
+      <p>© <span data-anio>2026</span> Juventud Renovadora · Unamos — Nicaragua</p>
+      <nav class="pie__legal" aria-label="Información legal">
+        <a class="pie__enlace" href="{% url 'privacidad' %}"{% if pagina == 'privacidad' %} aria-current="page"{% endif %}>Política de privacidad</a>
+        <a class="pie__enlace" href="{% url 'aviso-legal' %}"{% if pagina == 'aviso-legal' %} aria-current="page"{% endif %}>Aviso legal</a>
+        <a class="pie__enlace" href="{% url 'cookies' %}"{% if pagina == 'cookies' %} aria-current="page"{% endif %}>Política de cookies</a>
+      </nav>
+      <p>Sitio en fase de desarrollo · Contenido institucional pendiente de completar</p>
+    </div>
+  </div>
+</footer>

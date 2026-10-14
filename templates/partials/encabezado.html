@@ -1,0 +1,37 @@
+<header id="site-header" class="site-header{% if not cabecera_transparente %} is-solid{% endif %}">
+  <div class="header-inner contenedor">
+    {% include "partials/logo.html" %}
+
+    <nav class="nav-principal" aria-label="Navegación principal">
+      <a class="nav-link" href="{% url 'inicio' %}"{% if pagina == 'inicio' %} aria-current="page"{% endif %}>Inicio</a>
+      <a class="nav-link" href="{% url 'nosotros' %}"{% if pagina == 'nosotros' %} aria-current="page"{% endif %}>Quiénes somos</a>
+      <a class="nav-link" href="{% url 'actualidad' %}"{% if pagina == 'actualidad' %} aria-current="page"{% endif %}>Actualidad</a>
+      <a class="nav-link" href="{% url 'actividades' %}"{% if pagina == 'actividades' %} aria-current="page"{% endif %}>Actividades</a>
+      <a class="nav-link" href="{% url 'medioambiente' %}"{% if pagina == 'medioambiente' %} aria-current="page"{% endif %}>Medioambiente</a>
+      <a class="nav-link" href="{% url 'contacto' %}"{% if pagina == 'contacto' %} aria-current="page"{% endif %}>Contacto</a>
+      <a class="btn btn-primary" href="{% url 'donaciones' %}"{% if pagina == 'donaciones' %} aria-current="page"{% endif %}>Donaciones</a>
+    </nav>
+
+    <button id="menu-toggle" class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-panel" aria-label="Abrir menú">
+      <svg class="icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-menu"></use></svg>
+    </button>
+  </div>
+
+  <div id="menu-panel" class="menu-panel">
+    <nav class="flex flex-col" aria-label="Navegación móvil">
+      <a class="menu-item" href="{% url 'inicio' %}"{% if pagina == 'inicio' %} aria-current="page"{% endif %}>Inicio</a>
+      <a class="menu-item" href="{% url 'nosotros' %}"{% if pagina == 'nosotros' %} aria-current="page"{% endif %}>Quiénes somos</a>
+      <a class="menu-item" href="{% url 'actualidad' %}"{% if pagina == 'actualidad' %} aria-current="page"{% endif %}>Actualidad</a>
+      <a class="menu-item" href="{% url 'actividades' %}"{% if pagina == 'actividades' %} aria-current="page"{% endif %}>Actividades</a>
+      <a class="menu-item" href="{% url 'medioambiente' %}"{% if pagina == 'medioambiente' %} aria-current="page"{% endif %}>Medioambiente</a>
+      <a class="menu-item" href="{% url 'contacto' %}"{% if pagina == 'contacto' %} aria-current="page"{% endif %}>Contacto</a>
+      <a class="menu-item" href="{% url 'donaciones' %}"{% if pagina == 'donaciones' %} aria-current="page"{% endif %}>Donaciones</a>
+    </nav>
+    <div class="menu-panel__acciones">
+      <a class="btn btn-primary w-full sm:w-auto" href="{% url 'donaciones' %}">Donaciones</a>
+      <a class="btn btn-outline w-full sm:w-auto" href="{% url 'contacto' %}">Contacto</a>
+    </div>
+    <p class="menu-panel__firma">Unamos · Nicaragua</p>
+    <span class="hero-rule mx-auto mt-4 w-fit" aria-hidden="true"><i></i><i></i><i></i></span>
+  </div>
+</header>

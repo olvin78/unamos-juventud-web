@@ -3,14 +3,15 @@
 Primera versión de la web institucional de **Juventud Renovadora**, espacio de la juventud de
 **Unamos** (Nicaragua).
 
-El sitio es **estático** (HTML + Tailwind CSS + JavaScript vanilla) y se sirve en local de dos
-formas: con el servidor de desarrollo de Django (que además mantiene el panel `/admin/`) o con
-cualquier servidor de ficheros estáticos.
+El sitio es una **aplicación Django** con plantillas (HTML + Tailwind CSS + JavaScript vanilla):
+las páginas se generan en el servidor con clases de Django (`TemplateView`, `ListView`,
+`DetailView`), el contenido vive en la **base de datos** (modelos `web.models`, editables desde
+`/admin/`) y se sirve con `python manage.py runserver`.
 
 La **Fase 2** añadió la identidad visual tricolor (naranja institucional, verde de
 medioambiente, azul complementario) y la sección/página de medioambiente.
 
-La **Fase 3** rediseñó la portada (`index.html`) con identidad nicaragüense: fotografías
+La **Fase 3** rediseñó la portada (`templates/index.html`) con identidad nicaragüense: fotografías
 auténticas de Wikimedia Commons, secciones de hero, quiénes somos, nuestra juventud,
 actualidad, actividades y efemérides, medioambiente, galería «Conoce Nicaragua»,
 donaciones y contacto.
@@ -18,6 +19,16 @@ donaciones y contacto.
 La **Fase 4** rediseñó la página `templates/nosotros.html` como presentación institucional:
 hero, quiénes somos, misión, visión, principios, ámbitos de trabajo, trayectoria documentada,
 preguntas frecuentes y canales oficiales de Juventud Renovadora.
+
+La **Fase 5** migró el sitio a **Django con clases**: `templates/base.html` concentra header y
+footer, cada página hereda con `{% extends %}`, los listados se renderizan en el servidor
+(`{% for %}`) y las rutas son limpias con nombres de URL (`{% url 'nosotros' %}` →
+`/nosotros/`, `/actualidad/`, `/noticia/1/`).
+
+La **Fase 6** llevó el contenido a **base de datos**: `Noticia`, `Actividad` (calendario) y
+`Efemeride` son modelos de Django con migraciones, se gestionan desde `/admin/` y las vistas
+leen con ORM (`Noticia.objects…`). El aspecto no cambió: sigue siendo Tailwind CSS + JS vanilla
+para menú, filtros y animaciones.
 
 ---
 
@@ -27,11 +38,11 @@ preguntas frecuentes y canales oficiales de Juventud Renovadora.
 |---|---|
 | HTML5 semántico | Marcado de las 11 páginas |
 | Tailwind CSS 4 (CLI) | Compilación oficial de estilos → `static/css/output.css` |
-| JavaScript vanilla ES6+ | Menú, animaciones, datos demo y formulario |
+| JavaScript vanilla ES6+ | Menú, filtros, animaciones, formulario y donaciones |
 | Lenis | Desplazamiento suave (opcional, se desactiva con `prefers-reduced-motion`) |
 | Lucide (ISC) | Iconografía, embebida como SVG inline |
 | Google Fonts | Manrope (títulos) + Inter (cuerpo) |
-| Django | Únicamente como servidor y panel de administración (`/admin/`) |
+| Django 6 | Vistas con clases (`TemplateView` · `ListView` · `DetailView`), plantillas con herencia y rutas limpias; panel `/admin/` |
 
 No se usan React, Next.js, Vue, Angular, bases de datos ni CDN de desarrollo de Tailwind.
 
@@ -69,13 +80,23 @@ Componentes de color: `.eyebrow--verde` / `.eyebrow--azul`, `.btn-verde`, `.btn-
 ```
 unamos-juventud-web/
 │
+├── web/                        app Django: modelos, vistas y URLs
+│   ├── models.py               ← Noticia · Actividad (calendario) · Efemeride
+│   ├── admin.py                ← gestión del contenido desde /admin/
+│   ├── migrations/             ← migraciones de la base de datos
+│   ├── fixtures/               ← contenido inicial (loaddata contenido_inicial)
+│   ├── views.py                ← InicioView · PaginaView · *ListView · NoticiaDetailView
+│   ├── urls.py                 ← rutas con nombre (path('nosotros/', …, name='nosotros'))
+│   └── apps.py
+│
 ├── templates/
-│   ├── index.html              Página de inicio (portada Fase 3: 9 secciones)
-│   ├── nosotros.html           Sobre nosotros (Fase 4: 9 secciones)
-│   ├── actualidad.html         Actualidad
-│   ├── noticia.html            Detalle dinámico de noticia (?id=N)
-│   ├── actividades.html        Actividades y calendario
-│   ├── medioambiente.html      Medioambiente (nueva en Fase 2)
+│   ├── base.html               ← header, footer, <head> y bloques comunes
+│   ├── index.html              Portada (9 secciones, header transparente)
+│   ├── nosotros.html           Sobre nosotros (9 secciones)
+│   ├── actualidad.html         Actualidad (listado, render en servidor)
+│   ├── noticia.html            Detalle de noticia (/noticia/<id>/)
+│   ├── actividades.html        Actividades y calendario (render en servidor)
+│   ├── medioambiente.html      Medioambiente
 │   ├── donaciones.html         Donaciones
 │   ├── contacto.html           Contacto
 │   ├── privacidad.html         Política de privacidad (texto pendiente)
@@ -87,7 +108,7 @@ unamos-juventud-web/
 │   │   ├── input.css           ← fuente de estilos (Tailwind 4 + sistema de color)
 │   │   └── output.css          ← compilado (no editar a mano)
 │   ├── js/
-│   │   ├── main.js             ← datos demo + interacciones
+│   │   ├── main.js             ← menú, filtros, animaciones y formularios
 │   │   └── vendor/lenis.min.js
 │   └── img/
 │       ├── logos/              logo.svg, favicon.svg (temporales)
@@ -98,7 +119,7 @@ unamos-juventud-web/
 │   └── iconos/             reservado
 │
 ├── docs/                       documentación auxiliar
-├── config/ · manage.py         proyecto Django (solo admin y servidor)
+├── config/                     proyecto Django (settings + urls de enrutado)
 ├── package.json
 ├── .gitignore
 └── README.md
@@ -113,26 +134,18 @@ cd unamos-juventud-web
 npm install          # Tailwind CLI + Lenis (+ puppeteer-core para las comprobaciones)
 ```
 
-> Django (opcional, solo si quieres usar el servidor de Django o el panel `/admin/`):
+> Django (necesario para servir el sitio):
 > `python3 -m venv venv && source venv/bin/activate && pip install -r requirements.txt`
 
 ---
 
 ## Cómo iniciar el servidor local
 
-**Opción A — con Django (recomendada, incluye el panel de administración):**
-
 ```bash
 source venv/bin/activate
-python manage.py runserver
-# http://127.0.0.1:8000   → web
-# http://127.0.0.1:8000/admin/
-```
-
-**Opción B — servidor estático simple:**
-
-```bash
-npm run serve        # http://127.0.0.1:8080
+python manage.py runserver      # o: npm run serve
+# http://127.0.0.1:8000        → web
+# http://127.0.0.1:8000/admin/ → panel de administración
 ```
 
 ---
@@ -157,8 +170,8 @@ generado: nunca se edita a mano.
    - `static/img/medioambiente/` → fotografías de la página de medioambiente.
    - `static/img/nicaragua/` → fotografías reales de Nicaragua usadas en la portada.
    - `static/img/logos/` → logotipo y favicon.
-2. Mantén el mismo nombre de fichero, o actualiza la referencia en el HTML / en `static/js/main.js`
-   (las tarjetas de noticias usan `img: 'noticia-1.jpg'`…).
+2. Mantén el mismo nombre de fichero, o actualiza el campo **Imagen** de la noticia en
+   `/admin/` (por ejemplo: `noticia-1.jpg`).
 3. Recompila no hace falta: Tailwind no interviene en las imágenes.
 
 Las imágenes de `banners/`, `noticias/` y `medioambiente/` son **fotografías libres (CC0)**
@@ -177,24 +190,28 @@ Sustitúyelo por el oficial cuando exista: en el HTML aparece el bloque
 
 | Qué | Dónde |
 |---|---|
-| Titulares, párrafos, secciones | `templates/index.html` o `templates/<pagina>.html` |
-| **Noticias de ejemplo** | `static/js/main.js` → `DEMO_NOTICIAS` |
-| **Actividades de ejemplo** | `static/js/main.js` → `DEMO_ACTIVIDADES` |
-| **Efemérides de la portada** | `static/js/main.js` → `EFEMERIDES` |
-| Estados (próxima/finalizada/pendiente) | `static/js/main.js` → `ESTADOS` |
+| Titulares, párrafos, secciones | `templates/<pagina>.html` (dentro de `{% block content %}`) |
+| **Noticias, actividades y efemérides** | panel **`/admin/`** (modelos de `web/models.py`) |
+| Cabecera, pie y menú | `templates/base.html` |
 | Colores y tipografías | `static/css/input.css` → bloque `@theme` |
+| Rutas y nombres de URL | `web/urls.py` (espacio de nombres `web`) |
 
-Los datos demo están centralizados a un solo fichero para sustituirlos cuando llegue el
-contenido oficial: no hay que tocar ningún HTML para cambiar noticias o actividades.
+El contenido se administra desde Django (alta, baja y edición), sin tocar plantillas ni
+JavaScript. Las migraciones guardan el esquema: `python manage.py makemigrations web` tras
+cambiar un modelo. El fichero `web/fixtures/contenido_inicial.json` siembra el contenido de
+demostración: `python manage.py loaddata contenido_inicial`.
 
 ---
 
 ## Cómo actualizar los enlaces
 
-- **Enlaces internos:** las 11 páginas viven en `templates/` y usan rutas relativas entre
-  hermanas (`contacto.html`, `index.html`). Django redirige `/` y `/index.html` a
-  `/templates/index.html`; los estáticos se referencian como `../static/…`.
-- **Enlaces externos (canales oficiales):** aparecen en el footer de las 11 páginas, en
+- **Enlaces internos:** las plantillas usan `{% url 'nosotros' %}` y `{% static '…' %}`, así
+  que las rutas se definen una sola vez en `web/urls.py`:
+  `/` · `/nosotros/` · `/actualidad/` · `/actividades/` · `/medioambiente/` · `/donaciones/` ·
+  `/contacto/` · `/noticia/<id>/` y las legales (`/privacidad/`, `/aviso-legal/`, `/cookies/`).
+  Las direcciones antiguas (`/templates/nosotros.html`, `index.html`, …) **redirigen** a las
+  nuevas para no romper enlaces externos.
+- **Enlaces externos (canales oficiales):** aparecen en el pie (`templates/base.html`), en
   `templates/contacto.html` y en `templates/nosotros.html`:
   - https://unamosnic.org/
   - https://www.instagram.com/unamosnica/
@@ -208,12 +225,12 @@ contenido oficial: no hay que tocar ningún HTML para cambiar noticias o activid
 
 ## Actualizar header y footer
 
-El header y el footer están **duplicados a propósito** en las 11 páginas (no hay sistema de
-plantillas para mantenerlo sencillo). Si cambias uno, aplica el mismo cambio en las 11 páginas:
+Header, pie, menú y `<head>` están **una sola vez** en `templates/base.html`; cada página los
+hereda con `{% extends "base.html" %}`. Un cambio ahí se aplica a las 11 páginas:
 
 ```bash
-grep -n "site-header" templates/*.html
-grep -n "<footer" templates/*.html
+grep -n "site-header" templates/base.html
+grep -n "<footer" templates/base.html
 ```
 
 La navegación de escritorio tiene 7 enlaces y usa el punto de ruptura **`xl` (1280 px)**:
@@ -244,20 +261,20 @@ secciones alterna los colores institucionales para que ningún fondo saturado qu
 | # | Sección (`id`) | Fondo | Contenido |
 |---|---|---|---|
 | 1 | Hero | foto + degradado | «Juventud Renovadora», descripción, botones «Conócenos» y «Explorar actividades» y detalle tricolor |
-| 2 | `#conocenos` | blanco | «¿Quiénes somos?», foto vertical de León y botón → `templates/nosotros.html` |
+| 2 | `#conocenos` | blanco | «¿Quiénes somos?», foto vertical de León y botón → `/nosotros/` |
 | 3 | `#juventud` | azul suave | «Nuestra juventud»: tres bloques simples alternados — Educación (imagen izquierda), Cultura (imagen derecha), Participación (imagen izquierda), cada uno con título y descripción |
-| 4 | `#actualidad` | blanco | Hasta 3 noticias (datos `DEMO_NOTICIAS`) → `templates/actualidad.html` |
-| 5 | `#actividades` | naranja suave | «Actividades y efemérides»: agenda de demostración + efemérides reales (`EFEMERIDES`) en dos columnas → `templates/actividades.html` |
-| 6 | `#medioambiente` | verde suave | «Nuestro compromiso con el medioambiente» + foto del volcán Mombacho → `templates/medioambiente.html` |
+| 4 | `#actualidad` | blanco | Hasta 3 noticias (`NOTICIAS`, render en servidor) → `/actualidad/` |
+| 5 | `#actividades` | naranja suave | «Actividades y efemérides»: agenda + efemérides (`ACTIVIDADES`, `EFEMERIDES`) en dos columnas → `/actividades/` |
+| 6 | `#medioambiente` | verde suave | «Nuestro compromiso con el medioambiente» + foto del volcán Mombacho → `/medioambiente/` |
 | 7 | `#nicaragua` | azul suave | Galería asimétrica «Conoce Nicaragua» (Ometepe, León, Masaya, Costa Caribe) con pie de foto |
-| 8 | `#donaciones` | naranja | Breve llamada a colaborar → `templates/donaciones.html` (sin métodos de pago) |
-| 9 | `#contacto` | azul suave | «Mantengamos el contacto» con tres canales oficiales → `templates/contacto.html` |
+| 8 | `#donaciones` | naranja | Breve llamada a colaborar → `/donaciones/` (sin métodos de pago) |
+| 9 | `#contacto` | azul suave | «Mantengamos el contacto» con tres canales oficiales → `/contacto/` |
 
 - Fotografías reales de Nicaragua en `static/img/nicaragua/` (Wikimedia Commons, licencias
   verificables): créditos completos en `docs/imagenes.md`.
 - Las efemérides de la portada son fechas públicas verificadas (Rubén Darío, San Sebastián de
-  Diriamba, Medio Ambiente, Juventud, Independencia de Centroamérica) y se editan en `EFEMERIDES`;
-  las actividades que aparecen a su lado son contenido de muestra y se sustituirán por el
+  Diriamba, Medio Ambiente, Juventud, Independencia de Centroamérica) y se editan en `/admin/` →
+  Efemérides; las actividades de la agenda son contenido de muestra y se sustituirán por el
   calendario oficial cuando la organización lo valide.
 - La navegación, el menú, las animaciones de aparición y el resto de páginas no se tocaron.
 
@@ -313,9 +330,10 @@ tamaños (escritorio, tablet y móvil).
   debe revisarse legalmente antes de habilitar cualquier mecanismo de cobro.
 - **Contenido institucional**: objetivos, histórico, correo institucional y fotografías oficiales
   pendientes de entrega por la organización (ver `docs/pendientes.md`).
-- **Texto de medioambiente**: la sección del home y la página `medioambiente.html` usan
+- **Texto de medioambiente**: la sección del home y la página `/medioambiente/` usan
   contenido editorial de propuesta, pendiente de validación oficial.
-- **Páginas legales**: existen `templates/privacidad.html`, `templates/aviso-legal.html` y
-  `templates/cookies.html`, enlazadas desde el pie de todas las páginas; su texto está pendiente
-  de validación.
+- **Páginas legales**: existen `/privacidad/`, `/aviso-legal/` y `/cookies/`, enlazadas desde el
+  pie de todas las páginas; su texto está pendiente de validación.
+- **Cuentas de `/admin/`**: crear el usuario administrador con
+  `python manage.py createsuperuser` antes de publicar contenido.
 - **Logotipo oficial**: se usa un logotipo tipográfico temporal.

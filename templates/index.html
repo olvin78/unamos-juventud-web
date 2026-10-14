@@ -10,24 +10,20 @@
 {% block content %}
 
     <!-- HERO -->
-    <section class="relative flex min-h-svh items-end overflow-hidden" aria-labelledby="titulo-hero">
-      <img src="{% static 'img/nicaragua/juventud-renovadora-oficial.banner.png' %}"
+    <section class="hero" aria-labelledby="titulo-hero">
+      <img class="hero__img" src="{% static 'img/nicaragua/juventud-renovadora-oficial.banner.png' %}"
         alt="Catedral de Granada, Nicaragua, con estudiantes caminando por la plaza. Imagen ilustrativa."
-        class="absolute inset-0 h-full w-full object-cover object-[45%_center]" width="1920" height="1280"
-        fetchpriority="high" decoding="async">
-      <div class="absolute inset-0 bg-gradient-to-t from-black/88 via-black/55 to-black/35"></div>
+        width="1920" height="1280" fetchpriority="high" decoding="async">
+      <div class="hero__velo"></div>
 
-      <div class="relative z-10 mx-auto w-full max-w-[1280px] px-6 pb-24 pt-36 md:px-10 md:pb-28">
+      <div class="contenedor hero__contenido">
         <span class="hero-rule" aria-hidden="true" data-reveal><i></i><i></i><i></i></span>
-        <p class="text-[0.72rem] font-bold uppercase tracking-[0.3em] text-naranja md:text-justify md:hyphens-auto" data-reveal>Unamos · Nicaragua</p>
-        <h1 id="titulo-hero"
-          class="mt-5 font-display text-[clamp(2.5rem,6.6vw,5rem)] font-extrabold uppercase leading-[1.04] tracking-tight text-white"
-          data-reveal style="--reveal-delay:90ms">Juventud Renovadora</h1>
-        <p class="mt-6 max-w-2xl text-lg leading-relaxed text-white/85 md:text-xl" data-reveal
-          style="--reveal-delay:180ms">
+        <p class="hero__kicker" data-reveal>Unamos · Nicaragua</p>
+        <h1 id="titulo-hero" class="hero__titulo" data-reveal style="--reveal-delay:90ms">Juventud Renovadora</h1>
+        <p class="hero__entradilla" data-reveal style="--reveal-delay:180ms">
           Espacio de información, actividades y participación de Juventud Renovadora.
         </p>
-        <div class="mt-9 flex flex-wrap gap-4" data-reveal style="--reveal-delay:270ms">
+        <div class="hero__acciones" data-reveal style="--reveal-delay:270ms">
           <a class="btn btn-primary" href="{% url 'nosotros' %}">Conócenos</a>
           <a class="btn btn-ghost" href="{% url 'actividades' %}">Explorar actividades</a>
         </div>
@@ -39,41 +35,37 @@
     </section>
 
     <!-- QUIÉNES SOMOS -->
-    <section id="conocenos" class="mx-auto max-w-[1280px] px-6 py-24 md:px-10 md:py-32">
-      <div class="grid items-center gap-14 lg:grid-cols-[0.92fr_1.08fr] lg:gap-20">
-        <div class="relative" data-reveal="izq">
-          <img src="{% static 'img/nicaragua/Quienes-somos.png' %}"
-            alt="Comerciantes de jugo de frutas en una calle de León, Nicaragua. Imagen ilustrativa."
-            class="aspect-[4/5] w-full rounded-2xl object-cover object-[center_32%] md:aspect-[16/10] lg:aspect-[4/5] lg:object-center"
-            width="1300" height="1733" loading="lazy" decoding="async">
-          <div
-            class="absolute -bottom-6 left-6 hidden rounded-xl border border-tinta/10 bg-white px-5 py-4 shadow-[0_24px_48px_-36px_rgba(17,24,39,0.8)] md:block">
-            <p class="font-display text-sm font-bold text-tinta md:text-justify md:hyphens-auto">Unamos · Nicaragua</p>
-            <p class="mt-1 text-xs text-gris md:text-justify md:hyphens-auto">Información institucional en actualización</p>
+    <section id="conocenos" class="seccion seccion--alta">
+      <div class="contenedor">
+        <div class="grid items-center gap-14 lg:grid-cols-[0.92fr_1.08fr] lg:gap-20">
+          <div class="relative" data-reveal="izq">
+            <img src="{% static 'img/nicaragua/Quienes-somos.png' %}"
+              alt="Comerciantes de jugo de frutas en una calle de León, Nicaragua. Imagen ilustrativa."
+              class="img-marco aspect-[4/5] object-[center_32%] md:aspect-[16/10] lg:aspect-[4/5] lg:object-center"
+              width="1300" height="1733" loading="lazy" decoding="async">
+            <div class="nota-flotante">
+              <p class="nota-flotante__titulo texto-justo">Unamos · Nicaragua</p>
+              <p class="nota-flotante__texto texto-justo">Información institucional en actualización</p>
+            </div>
           </div>
-        </div>
 
-        <div>
-          <p class="eyebrow" data-reveal>Conócenos</p>
-          <h2 class="mt-5 font-display text-[clamp(2rem,4vw,3.1rem)] font-extrabold leading-tight tracking-tight"
-            data-reveal>¿Quiénes somos?</h2>
-          <p class="lead mt-6 md:text-justify md:hyphens-auto" data-reveal style="--reveal-delay:90ms">
-            Juventud Renovadora es el espacio de la juventud de Unamos dedicado a informar, convocar y
-            organizar actividades. Esta web reúne la información institucional disponible y se irá
-            completando con los contenidos oficiales.
-          </p>
-          <p class="mt-4 text-[0.95rem] leading-relaxed text-gris md:text-justify md:hyphens-auto" data-reveal style="--reveal-delay:150ms">
-            El sitio está en fase de construcción: los objetivos institucionales, el histórico y los datos
-            de contacto definitivos se publicarán cuando sean validados por la organización.
-          </p>
-          <div class="mt-8" data-reveal style="--reveal-delay:210ms">
-            <a class="btn btn-primary" href="{% url 'nosotros' %}">Conocer más <svg
-                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                aria-hidden="true">
-                <path d="M5 12h14" />
-                <path d="m12 5 7 7-7 7" />
-              </svg></a>
+          <div>
+            <p class="eyebrow" data-reveal>Conócenos</p>
+            <h2 class="titulo-seccion mt-5" data-reveal>¿Quiénes somos?</h2>
+            <p class="lead texto-justo mt-6" data-reveal style="--reveal-delay:90ms">
+              Juventud Renovadora es el espacio de la juventud de Unamos dedicado a informar, convocar y
+              organizar actividades. Esta web reúne la información institucional disponible y se irá
+              completando con los contenidos oficiales.
+            </p>
+            <p class="texto-secundario texto-justo mt-4" data-reveal style="--reveal-delay:150ms">
+              El sitio está en fase de construcción: los objetivos institucionales, el histórico y los datos
+              de contacto definitivos se publicarán cuando sean validados por la organización.
+            </p>
+            <div class="mt-8" data-reveal style="--reveal-delay:210ms">
+              <a class="btn btn-primary" href="{% url 'nosotros' %}">Conocer más
+                <svg class="icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-flecha"></use></svg>
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -81,18 +73,16 @@
 
     <!-- NUESTRA JUVENTUD -->
     <section id="juventud" class="bg-azul-suave">
-      <div class="mx-auto max-w-[1280px] px-6 py-24 md:px-10 md:py-32">
+      <div class="contenedor seccion seccion--alta">
         <div class="max-w-3xl">
           <p class="eyebrow eyebrow--azul" data-reveal>Juventud</p>
-          <h2 class="mt-5 font-display text-[clamp(2rem,4vw,3.1rem)] font-extrabold leading-tight tracking-tight"
-            data-reveal>Nuestra juventud</h2>
-          <p class="lead mt-5 md:text-justify md:hyphens-auto" data-reveal style="--reveal-delay:90ms">Experiencias, educación, cultura y participación.
-          </p>
+          <h2 class="titulo-seccion mt-5" data-reveal>Nuestra juventud</h2>
+          <p class="lead texto-justo mt-5" data-reveal style="--reveal-delay:90ms">Experiencias, educación, cultura y participación.</p>
         </div>
 
         <div class="mt-14 space-y-16 md:space-y-20">
           <!-- EDUCACIÓN: imagen a la izquierda -->
-          <article class="grid items-center gap-8 lg:grid-cols-2 lg:gap-16">
+          <article class="bloque-media">
             <figure class="foto aspect-[4/3]" data-reveal="izq">
               <img src="{% static 'img/nicaragua/educacion-esteli.jpg' %}"
                 alt="Grupo de niñas y niños en el patio de un centro educativo en Estelí, Nicaragua. Imagen ilustrativa."
@@ -100,9 +90,8 @@
             </figure>
             <div data-reveal="der">
               <h3 class="titulo-bloque">Educación</h3>
-              <p class="lead mt-4 text-base text-pretty md:text-justify md:hyphens-auto">Formación, conocimientos y
-                oportunidades educativas.</p>
-              <p class="mt-4 text-[0.95rem] leading-relaxed text-gris text-pretty md:text-justify md:hyphens-auto">
+              <p class="lead texto-justo mt-4">Formación, conocimientos y oportunidades educativas.</p>
+              <p class="texto-secundario texto-justo mt-4">
                 Detrás de cada aula hay un país en construcción: cada cuaderno que se abre, cada duda que se atreve a
                 decir en voz alta y cada examen aprobado son un empujón más hacia el propio futuro. Estudiar sigue
                 siendo una de las formas más seguras de elegir el camino que uno quiere recorrer.</p>
@@ -110,7 +99,7 @@
           </article>
 
           <!-- CULTURA: imagen a la derecha -->
-          <article class="grid items-center gap-8 lg:grid-cols-2 lg:gap-16">
+          <article class="bloque-media">
             <figure class="foto aspect-[4/3] lg:order-2" data-reveal="der">
               <img src="{% static 'img/nicaragua/cultura-diriamba.jpg' %}"
                 alt="Niño con traje tradicional durante las Fiestas de San Sebastián en Diriamba, Nicaragua. Imagen ilustrativa."
@@ -118,9 +107,8 @@
             </figure>
             <div class="lg:order-1" data-reveal="izq">
               <h3 class="titulo-bloque">Cultura</h3>
-              <p class="lead mt-4 text-base text-pretty md:text-justify md:hyphens-auto">Expresiones culturales y
-                patrimonio nicaragüense.</p>
-              <p class="mt-4 text-[0.95rem] leading-relaxed text-gris text-pretty md:text-justify md:hyphens-auto">
+              <p class="lead texto-justo mt-4">Expresiones culturales y patrimonio nicaragüense.</p>
+              <p class="texto-secundario texto-justo mt-4">
                 Las fiestas, la música y las tradiciones son parte de la identidad que se transmite de generación en
                 generación. En Nicaragua la cultura no se guarda detrás de un cristal: se vive en la plaza, en la
                 comparsa, en el tambor y en la conversación de la esquina, y se aprende mirando, imitando y
@@ -129,17 +117,16 @@
           </article>
 
           <!-- PARTICIPACIÓN: imagen a la izquierda -->
-          <article class="grid items-center gap-8 lg:grid-cols-2 lg:gap-16">
+          <article class="bloque-media">
             <figure class="foto aspect-[4/3]" data-reveal="izq">
               <img src="{% static 'img/nicaragua/participacion-esteli.jpg' %}"
-                alt="Niña pintando en un taller de arte en Estelí, Nicaragua. Imagen ilustrativa." width="1400"
-                height="989" loading="lazy" decoding="async">
+                alt="Niña pintando en un taller de arte en Estelí, Nicaragua. Imagen ilustrativa."
+                width="1400" height="989" loading="lazy" decoding="async">
             </figure>
             <div data-reveal="der">
               <h3 class="titulo-bloque">Participación</h3>
-              <p class="lead mt-4 text-base text-pretty md:text-justify md:hyphens-auto">Espacios de encuentro y
-                actividades juveniles.</p>
-              <p class="mt-4 text-[0.95rem] leading-relaxed text-gris text-pretty md:text-justify md:hyphens-auto">
+              <p class="lead texto-justo mt-4">Espacios de encuentro y actividades juveniles.</p>
+              <p class="texto-secundario texto-justo mt-4">
                 Participar es más que asistir: es levantar la mano, proponer, escuchar y ponerse de acuerdo. Talleres,
                 asambleas y jornadas son el lugar donde una idea suelta se convierte en un plan compartido y en ganas
                 de hacer cosas juntos.</p>
@@ -147,7 +134,7 @@
           </article>
         </div>
 
-        <p class="mt-12 max-w-3xl text-xs leading-relaxed text-gris/75 md:text-justify md:hyphens-auto" data-reveal>
+        <p class="texto-nota texto-justo mt-12 max-w-3xl" data-reveal>
           Fotografías ilustrativas de contextos educativos, culturales y comunitarios en Nicaragua: no
           corresponden a actividades organizadas por Juventud Renovadora. Contenido editorial de esta
           sección, pendiente de validación por la organización.
@@ -157,21 +144,16 @@
 
     <!-- ACTUALIDAD -->
     <section id="actualidad" class="border-y border-tinta/10">
-      <div class="mx-auto max-w-[1280px] px-6 py-24 md:px-10 md:py-28">
-        <div class="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+      <div class="contenedor seccion">
+        <div class="cabecera-seccion">
           <div>
             <p class="eyebrow" data-reveal>Actualidad</p>
-            <h2 class="mt-4 font-display text-[clamp(1.9rem,4vw,3rem)] font-extrabold leading-tight tracking-tight"
-              data-reveal>Actualidad</h2>
-            <p class="lead mt-4 md:text-justify md:hyphens-auto" data-reveal>Noticias, comunicados y actividades de Juventud Renovadora en un solo
-              lugar.</p>
+            <h2 class="titulo-seccion titulo-seccion--compacto mt-4" data-reveal>Actualidad</h2>
+            <p class="lead texto-justo mt-4" data-reveal>Noticias, comunicados y actividades de Juventud Renovadora en un solo lugar.</p>
           </div>
-          <a class="btn btn-outline shrink-0 self-start md:self-auto" href="{% url 'actualidad' %}" data-reveal>Ver
-            actualidad <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M5 12h14" />
-              <path d="m12 5 7 7-7 7" />
-            </svg></a>
+          <a class="btn btn-outline shrink-0 self-start md:self-auto" href="{% url 'actualidad' %}" data-reveal>Ver actualidad
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-flecha"></use></svg>
+          </a>
         </div>
 
         <div class="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3" data-noticias>
@@ -179,26 +161,17 @@
           <article class="card" id="noticia-{{ noticia.id }}" data-categoria="{{ noticia.categoria }}" data-reveal>
             <div class="card__media">
               <img src="{% static 'img/noticias/' %}{{ noticia.img }}"
-                alt="Imagen ilustrativa: {{ noticia.titulo }}" width="960" height="640" loading="lazy"
-                decoding="async">
+                alt="Imagen ilustrativa: {{ noticia.titulo }}" width="960" height="640" loading="lazy" decoding="async">
             </div>
             <div class="card__body">
-              <div class="flex flex-wrap items-center gap-3">
-                <span class="chip chip--cat">{{ noticia.categoria }}</span>
-              </div>
-              <h3 class="font-display text-[1.15rem] font-bold leading-snug">{{ noticia.titulo }}</h3>
-              <p class="text-[0.95rem] leading-relaxed text-gris">{{ noticia.resumen }}</p>
-              <div class="mt-auto flex flex-wrap items-center justify-between gap-3 pt-2">
+              <span class="chip chip--cat">{{ noticia.categoria }}</span>
+              <h3 class="card__titulo">{{ noticia.titulo }}</h3>
+              <p class="card__texto">{{ noticia.resumen }}</p>
+              <div class="card__pie">
                 <a class="link-arrow" href="{% url 'noticia' noticia.id %}">Leer más
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    aria-hidden="true">
-                    <path d="M5 12h14" />
-                    <path d="m12 5 7 7-7 7" />
-                  </svg>
+                  <svg class="icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-flecha"></use></svg>
                 </a>
-                <time class="text-xs font-semibold uppercase tracking-wider text-gris/70"
-                  datetime="{{ noticia.fecha }}">{{ noticia.fecha_compacta }}</time>
+                <time class="meta-fecha" datetime="{{ noticia.fecha }}">{{ noticia.fecha_compacta }}</time>
               </div>
             </div>
           </article>
@@ -209,22 +182,16 @@
 
     <!-- ACTIVIDADES Y EFEMÉRIDES -->
     <section id="actividades" class="bg-naranja-suave">
-      <div class="mx-auto max-w-[1280px] px-6 py-24 md:px-10 md:py-28">
-        <div class="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+      <div class="contenedor seccion">
+        <div class="cabecera-seccion">
           <div>
             <p class="eyebrow" data-reveal>Agenda</p>
-            <h2 class="mt-4 font-display text-[clamp(1.9rem,4vw,3rem)] font-extrabold leading-tight tracking-tight"
-              data-reveal>Actividades y efemérides</h2>
-            <p class="lead mt-4 md:text-justify md:hyphens-auto" data-reveal>Consulta las próximas convocatorias y las fechas de referencia del
-              calendario.</p>
+            <h2 class="titulo-seccion titulo-seccion--compacto mt-4" data-reveal>Actividades y efemérides</h2>
+            <p class="lead texto-justo mt-4" data-reveal>Consulta las próximas convocatorias y las fechas de referencia del calendario.</p>
           </div>
-          <a class="btn btn-outline shrink-0 self-start md:self-auto" href="{% url 'actividades' %}"
-            data-reveal>Consultar calendario <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-              stroke-linejoin="round" aria-hidden="true">
-              <path d="M5 12h14" />
-              <path d="m12 5 7 7-7 7" />
-            </svg></a>
+          <a class="btn btn-outline shrink-0 self-start md:self-auto" href="{% url 'actividades' %}" data-reveal>Consultar calendario
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-flecha"></use></svg>
+          </a>
         </div>
 
         <div class="mt-12 grid gap-12 lg:grid-cols-[1.35fr_1fr] lg:gap-16">
@@ -238,18 +205,14 @@
                   <span class="mes">{{ actividad.mes }} {{ actividad.anio }}</span>
                 </div>
                 <div class="min-w-0">
-                  <h3 class="font-display text-lg font-bold leading-snug">{{ actividad.nombre }}</h3>
-                  <p class="mt-1.5 text-sm leading-relaxed text-gris">{{ actividad.descripcion }}</p>
+                  <h3 class="actividad__titulo">{{ actividad.nombre }}</h3>
+                  <p class="actividad__texto">{{ actividad.descripcion }}</p>
                 </div>
                 <div class="flex flex-wrap items-center gap-2">
                   <span class="chip {{ actividad.estado_clase }}">{{ actividad.estado_texto }}</span>
                   <span class="chip chip--azul">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                      aria-hidden="true">
-                      <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
-                      <circle cx="12" cy="10" r="3" />
-                    </svg>{{ actividad.modalidad }}</span>
+                    <svg class="icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-ubicacion"></use></svg>{{ actividad.modalidad }}
+                  </span>
                 </div>
               </article>
               {% endfor %}
@@ -259,10 +222,9 @@
           <div>
             <h3 class="bloque-titulo" data-reveal>Efemérides</h3>
             <ul class="efemerides mt-4" data-efemerides>
-              {% for efemeride in efemerides %}
+              {% for efemeride in efemerides|dictsort:"fecha" %}
               <li class="efemeride" data-reveal>
-                <time class="efemeride__fecha" datetime="{{ efemeride.fecha }}">{{ efemeride.dia }}
-                  {{ efemeride.mes }}</time>
+                <time class="efemeride__fecha" datetime="{{ efemeride.fecha }}">{{ efemeride.dia }} {{ efemeride.mes }}</time>
                 <div class="efemeride__cuerpo">
                   <p class="efemeride__titulo">{{ efemeride.titulo }}</p>
                   <p class="efemeride__detalle">{{ efemeride.detalle }}</p>
@@ -271,7 +233,7 @@
               </li>
               {% endfor %}
             </ul>
-            <p class="mt-6 text-xs leading-relaxed text-gris/75 md:text-justify md:hyphens-auto">
+            <p class="texto-nota texto-justo mt-6">
               Fechas culturales, históricas y sociales de Nicaragua de carácter público, verificadas antes
               de publicarse. El calendario oficial se difundirá cuando sea validado por la organización.
             </p>
@@ -282,31 +244,22 @@
 
     <!-- MEDIOAMBIENTE -->
     <section id="medioambiente" class="bg-verde-suave">
-      <div class="mx-auto max-w-[1280px] px-6 py-24 md:px-10 md:py-32">
+      <div class="contenedor seccion seccion--alta">
         <div class="grid items-center gap-12 lg:grid-cols-[1.02fr_0.98fr] lg:gap-20">
           <div class="relative" data-reveal="escala">
             <img src="{% static 'img/nicaragua/medioambiente-mombacho.jpg' %}"
               alt="Volcán Mombacho con una nube sobre su cima, visto desde la carretera panamericana, Nicaragua. Imagen ilustrativa."
-              class="aspect-[4/3] w-full rounded-2xl object-cover" width="1600" height="968" loading="lazy"
-              decoding="async">
-            <span
-              class="absolute left-5 top-5 inline-flex items-center gap-2 rounded-full bg-white/95 px-4 py-2 text-[0.68rem] font-extrabold uppercase tracking-[0.18em] text-verde-profundo shadow-[0_10px_30px_-18px_rgba(17,24,39,0.7)]">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"
-                class="h-4 w-4">
-                <path
-                  d="M11 20a10 10 0 0 0 10-10 25.9 25.9 0 0 0-1.04-7.281 1 1 0 0 0-1.755-.325C15.833 5.5 13 5.5 9.8 6.1A7 7 0 0 0 11 20" />
-                <path d="M2 21a5 5 0 0 1 2.911-4.544C7.613 15.212 8.351 15.24 11 13" />
-              </svg>
+              class="img-marco aspect-[4/3]" width="1600" height="968" loading="lazy" decoding="async">
+            <span class="etiqueta-foto">
+              <svg class="icon" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-hoja"></use></svg>
               Medioambiente
             </span>
           </div>
 
           <div>
             <p class="eyebrow eyebrow--verde" data-reveal>Sostenibilidad</p>
-            <h2 class="mt-5 font-display text-[clamp(2rem,4vw,3.1rem)] font-extrabold leading-tight tracking-tight"
-              data-reveal style="--reveal-delay:60ms">Nuestro compromiso con el medioambiente</h2>
-            <p class="lead mt-6 md:text-justify md:hyphens-auto" data-reveal style="--reveal-delay:120ms">
+            <h2 class="titulo-seccion mt-5" data-reveal style="--reveal-delay:60ms">Nuestro compromiso con el medioambiente</h2>
+            <p class="lead texto-justo mt-6" data-reveal style="--reveal-delay:120ms">
               Cuidar el medioambiente es también pensar en el futuro. La protección de nuestros
               recursos naturales, la educación ambiental y el desarrollo sostenible son cuestiones
               que afectan directamente a las nuevas generaciones.
@@ -315,66 +268,41 @@
             <ul class="mt-8 border-t border-verde/30" data-reveal style="--reveal-delay:180ms">
               <li class="punto">
                 <span class="punto__icono">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    aria-hidden="true">
-                    <path
-                      d="M11 20a10 10 0 0 0 10-10 25.9 25.9 0 0 0-1.04-7.281 1 1 0 0 0-1.755-.325C15.833 5.5 13 5.5 9.8 6.1A7 7 0 0 0 11 20" />
-                    <path d="M2 21a5 5 0 0 1 2.911-4.544C7.613 15.212 8.351 15.24 11 13" />
-                  </svg>
+                  <svg class="icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-hoja"></use></svg>
                 </span>
                 <div>
-                  <h3 class="font-display text-[1.05rem] font-bold">Protección de la naturaleza</h3>
-                  <p class="mt-1 text-sm leading-relaxed text-gris md:text-justify md:hyphens-auto">Conservación de bosques, agua y biodiversidad como
+                  <h3 class="punto__titulo">Protección de la naturaleza</h3>
+                  <p class="punto__texto texto-justo">Conservación de bosques, agua y biodiversidad como
                     patrimonio de las nuevas generaciones.</p>
                 </div>
               </li>
               <li class="punto">
                 <span class="punto__icono">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    aria-hidden="true">
-                    <path d="M21.54 15H17a2 2 0 0 0-2 2v4.54" />
-                    <path d="M7 3.34V5a3 3 0 0 0 3 3a2 2 0 0 1 2 2c0 1.1.9 2 2 2a2 2 0 0 0 2-2c0-1.1.9-2 2-2h3.17" />
-                    <path d="M11 21.95V18a2 2 0 0 0-2-2a2 2 0 0 1-2-2v-1a2 2 0 0 0-2-2H2.05" />
-                    <circle cx="12" cy="12" r="10" />
-                  </svg>
+                  <svg class="icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-reciclar"></use></svg>
                 </span>
                 <div>
-                  <h3 class="font-display text-[1.05rem] font-bold">Educación ambiental</h3>
-                  <p class="mt-1 text-sm leading-relaxed text-gris md:text-justify md:hyphens-auto">Información y sensibilización sobre el cuidado del
+                  <h3 class="punto__titulo">Educación ambiental</h3>
+                  <p class="punto__texto texto-justo">Información y sensibilización sobre el cuidado del
                     entorno para las decisiones de cada día.</p>
                 </div>
               </li>
               <li class="punto">
                 <span class="punto__icono">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                    aria-hidden="true">
-                    <path d="M10 10v.2A3 3 0 0 1 8.9 16H5a3 3 0 0 1-1-5.8V10a3 3 0 0 1 6 0Z" />
-                    <path d="M7 16v6" />
-                    <path d="M13 19v3" />
-                    <path
-                      d="M12 19h8.3a1 1 0 0 0 .7-1.7L18 14h.3a1 1 0 0 0 .7-1.7L16 9h.2a1 1 0 0 0 .8-1.7L13 3l-1.4 1.5" />
-                  </svg>
+                  <svg class="icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-crecer"></use></svg>
                 </span>
                 <div>
-                  <h3 class="font-display text-[1.05rem] font-bold">Desarrollo sostenible</h3>
-                  <p class="mt-1 text-sm leading-relaxed text-gris md:text-justify md:hyphens-auto">Modelos de progreso que atienden las necesidades
+                  <h3 class="punto__titulo">Desarrollo sostenible</h3>
+                  <p class="punto__texto texto-justo">Modelos de progreso que atienden las necesidades
                     presentes sin comprometer los recursos del futuro.</p>
                 </div>
               </li>
             </ul>
 
             <div class="mt-8 flex flex-wrap items-center gap-5" data-reveal style="--reveal-delay:240ms">
-              <a class="btn btn-verde" href="{% url 'medioambiente' %}">Conocer más <svg
-                  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                  aria-hidden="true">
-                  <path d="M5 12h14" />
-                  <path d="m12 5 7 7-7 7" />
-                </svg></a>
-              <p class="max-w-[23rem] text-xs leading-relaxed text-gris/70 md:text-justify md:hyphens-auto">Contenido editorial de esta sección,
+              <a class="btn btn-verde" href="{% url 'medioambiente' %}">Conocer más
+                <svg class="icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-flecha"></use></svg>
+              </a>
+              <p class="max-w-[23rem] text-xs leading-relaxed text-gris/70 texto-justo">Contenido editorial de esta sección,
                 pendiente de validación por la organización.</p>
             </div>
           </div>
@@ -384,13 +312,12 @@
 
     <!-- CONOCE NICARAGUA -->
     <section id="nicaragua" class="bg-azul-suave">
-      <div class="mx-auto max-w-[1280px] px-6 py-24 md:px-10 md:py-32">
-        <div class="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+      <div class="contenedor seccion seccion--alta">
+        <div class="cabecera-seccion">
           <div class="max-w-2xl">
             <p class="eyebrow eyebrow--azul" data-reveal>Nicaragua</p>
-            <h2 class="mt-5 font-display text-[clamp(2rem,4vw,3.1rem)] font-extrabold leading-tight tracking-tight"
-              data-reveal>Conoce Nicaragua</h2>
-            <p class="lead mt-5 md:text-justify md:hyphens-auto" data-reveal style="--reveal-delay:90ms">Naturaleza, historia y cultura.</p>
+            <h2 class="titulo-seccion mt-5" data-reveal>Conoce Nicaragua</h2>
+            <p class="lead texto-justo mt-5" data-reveal style="--reveal-delay:90ms">Naturaleza, historia y cultura.</p>
           </div>
           <p class="max-w-xs text-xs leading-relaxed text-gris md:text-right" data-reveal>
             Lugares reales de Nicaragua. Fotografías de Wikimedia Commons con licencias libres; el autor
@@ -443,109 +370,68 @@
 
     <!-- DONACIONES -->
     <section id="donaciones" class="bg-naranja">
-      <div
-        class="mx-auto grid max-w-[1280px] items-center gap-10 px-6 py-20 md:px-10 md:py-24 lg:grid-cols-[1.3fr_auto]">
+      <div class="contenedor grid items-center gap-10 py-20 md:py-24 lg:grid-cols-[1.3fr_auto]">
         <div>
           <p class="eyebrow eyebrow--tinta" data-reveal>Donaciones</p>
-          <h2
-            class="mt-5 font-display text-[clamp(1.9rem,4vw,3rem)] font-extrabold leading-tight tracking-tight text-tinta"
-            data-reveal>Apoya las actividades de la juventud</h2>
-          <p class="mt-5 max-w-2xl leading-relaxed text-tinta/80 md:text-justify md:hyphens-auto" data-reveal style="--reveal-delay:90ms">
+          <h2 class="titulo-seccion titulo-seccion--compacto mt-5" data-reveal>Apoya las actividades de la juventud</h2>
+          <p class="mt-5 max-w-2xl leading-relaxed text-tinta/80 texto-justo" data-reveal style="--reveal-delay:90ms">
             Estamos preparando las modalidades de colaboración para esta primera fase. La información
             económica y los canales de aporte están pendientes de confirmación institucional: todavía no
             existen métodos de pago habilitados.
           </p>
         </div>
-        <div data-reveal style="--reveal-delay:150ms" class="lg:justify-self-end">
-          <a class="btn btn-dark" href="{% url 'donaciones' %}">Ver información de donaciones <svg
-              xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M5 12h14" />
-              <path d="m12 5 7 7-7 7" />
-            </svg></a>
+        <div class="lg:justify-self-end" data-reveal style="--reveal-delay:150ms">
+          <a class="btn btn-dark" href="{% url 'donaciones' %}">Ver información de donaciones
+            <svg class="icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-flecha"></use></svg>
+          </a>
         </div>
       </div>
     </section>
 
     <!-- CONTACTO -->
     <section id="contacto" class="bg-azul-suave">
-      <div class="mx-auto grid max-w-[1280px] gap-12 px-6 py-24 md:px-10 md:py-28 lg:grid-cols-2 lg:gap-20">
+      <div class="contenedor seccion grid gap-12 lg:grid-cols-2 lg:gap-20">
         <div>
           <p class="eyebrow eyebrow--azul" data-reveal>Contacto</p>
-          <h2 class="mt-5 font-display text-[clamp(2rem,4vw,3.1rem)] font-extrabold leading-tight tracking-tight"
-            data-reveal>Mantengamos el contacto</h2>
-          <p class="lead mt-5 md:text-justify md:hyphens-auto" data-reveal style="--reveal-delay:90ms">
+          <h2 class="titulo-seccion mt-5" data-reveal>Mantengamos el contacto</h2>
+          <p class="lead texto-justo mt-5" data-reveal style="--reveal-delay:90ms">
             Escríbenos a través del formulario de contacto o síguenos en los canales oficiales de Unamos.
           </p>
           <div class="mt-8" data-reveal style="--reveal-delay:150ms">
-            <a class="btn btn-azul" href="{% url 'contacto' %}">Ir a contacto <svg xmlns="http://www.w3.org/2000/svg"
-                width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M5 12h14" />
-                <path d="m12 5 7 7-7 7" />
-              </svg></a>
+            <a class="btn btn-azul" href="{% url 'contacto' %}">Ir a contacto
+              <svg class="icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-flecha"></use></svg>
+            </a>
           </div>
         </div>
 
         <div class="space-y-4" data-reveal="der">
           <a class="canal" href="https://www.instagram.com/unamosnica/" target="_blank" rel="noopener noreferrer">
-            <span class="canal__icono"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" aria-hidden="true">
-                <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
-              </svg></span>
+            <span class="canal__icono"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-instagram"></use></svg></span>
             <span>
               <span class="canal__nombre">Instagram</span>
-              <span class="block text-xs text-gris">Canales oficiales de Unamos</span>
+              <span class="canal__detalle">Canales oficiales de Unamos</span>
             </span>
-            <span class="canal__flecha"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" aria-hidden="true">
-                <path d="M7 7h10v10" />
-                <path d="M7 17 17 7" />
-              </svg></span>
+            <span class="canal__flecha"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-externo"></use></svg></span>
             <span class="sr-only">(se abre en una pestaña nueva)</span>
           </a>
 
           <a class="canal" href="https://www.facebook.com/share/1ADHnHSRpG/" target="_blank" rel="noopener noreferrer">
-            <span class="canal__icono"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" aria-hidden="true">
-                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-              </svg></span>
+            <span class="canal__icono"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-facebook"></use></svg></span>
             <span>
               <span class="canal__nombre">Facebook</span>
-              <span class="block text-xs text-gris">Canales oficiales de Unamos</span>
+              <span class="canal__detalle">Canales oficiales de Unamos</span>
             </span>
-            <span class="canal__flecha"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" aria-hidden="true">
-                <path d="M7 7h10v10" />
-                <path d="M7 17 17 7" />
-              </svg></span>
+            <span class="canal__flecha"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-externo"></use></svg></span>
             <span class="sr-only">(se abre en una pestaña nueva)</span>
           </a>
 
           <a class="canal" href="https://unamosnic.org/" target="_blank" rel="noopener noreferrer">
-            <span class="canal__icono"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" aria-hidden="true">
-                <circle cx="12" cy="12" r="10" />
-                <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
-                <path d="M2 12h20" />
-              </svg></span>
+            <span class="canal__icono"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-globo"></use></svg></span>
             <span>
               <span class="canal__nombre">Web oficial de Unamos</span>
-              <span class="block text-xs text-gris">Sitio institucional</span>
+              <span class="canal__detalle">Sitio institucional</span>
             </span>
-            <span class="canal__flecha"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" aria-hidden="true">
-                <path d="M7 7h10v10" />
-                <path d="M7 17 17 7" />
-              </svg></span>
+            <span class="canal__flecha"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-externo"></use></svg></span>
             <span class="sr-only">(se abre en una pestaña nueva)</span>
           </a>
         </div>

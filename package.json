@@ -8,7 +8,7 @@
     "build": "tailwindcss -i static/css/input.css -o static/css/output.css --minify",
     "vendor": "mkdir -p static/js/vendor && cp node_modules/lenis/dist/lenis.min.js static/js/vendor/lenis.min.js && cp node_modules/lucide/dist/umd/lucide.min.js static/js/vendor/lucide.min.js",
     "postinstall": "npm run vendor",
-    "serve": "python3 -m http.server 8080",
+    "serve": "python3 manage.py runserver",
     "check": "node scripts/check.mjs"
   },
   "dependencies": {

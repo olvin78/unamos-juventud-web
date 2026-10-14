@@ -1,14 +1,19 @@
 """Vistas del sitio con clases basadas en vistas genéricas de Django.
 
+Todas leen de la base de datos (modelos de `web.models`, editables en /admin/):
+
 - PaginaView (TemplateView): páginas institucionales estáticas.
-- InicioView (TemplateView): portada, con datos para las listas de home.
-- ActualidadListView / ActividadesListView (ListView): listados.
-- NoticiaDetailView (DetailView): detalle con anterior/siguiente.
+- InicioView (TemplateView): portada con noticias, agenda y efemérides.
+- ActualidadListView / ActividadesListView (ListView): listados con filtros.
+- NoticiaDetailView (DetailView): detalle con anterior/siguiente (404 si no existe).
 """
-from django.http import Http404
 from django.views.generic import DetailView, ListView, TemplateView
 
-from .data import ACTIVIDADES, EFEMERIDES, NOTICIAS
+from .models import Actividad, Efemeride, Noticia
+
+# Elementos que muestra cada listado
+NOTICIAS_POR_PAGINA = 6
+ACTIVIDADES_POR_PAGINA = 6
 
 
 class PaginaMixin:
@@ -34,7 +39,7 @@ class PaginaView(PaginaMixin, TemplateView):
 
 
 class InicioView(PaginaMixin, TemplateView):
-    """Portada: el header se superpone al hero y las listas se recortan."""
+    """Portada: header transparente sobre el hero y listas de resumen."""
 
     template_name = 'index.html'
     pagina = 'inicio'
@@ -43,54 +48,49 @@ class InicioView(PaginaMixin, TemplateView):
         contexto = super().get_context_data(**kwargs)
         contexto.update({
             'cabecera_transparente': True,
-            'noticias': NOTICIAS[:3],
-            'actividades': ACTIVIDADES[:3],
-            'efemerides': EFEMERIDES[:5],
+            'noticias': Noticia.objects.all()[:3],
+            'actividades': Actividad.objects.filter(
+                estado=Actividad.Estado.PROXIMA
+            )[:3],
+            'efemerides': Efemeride.objects.all()[:5],
         })
         return contexto
 
 
 class ActualidadListView(PaginaMixin, ListView):
-    """Listado de noticias con filtros por categoría (cliente)."""
+    """Listado de noticias; los filtros por categoría son de cliente."""
 
+    model = Noticia
     template_name = 'actualidad.html'
     context_object_name = 'noticias'
-    queryset = NOTICIAS[:6]
+    paginate_by = NOTICIAS_POR_PAGINA
     pagina = 'actualidad'
 
 
 class ActividadesListView(PaginaMixin, ListView):
-    """Listado de actividades con filtros por estado (cliente)."""
+    """Calendario de actividades; los filtros por estado son de cliente."""
 
+    model = Actividad
     template_name = 'actividades.html'
     context_object_name = 'actividades'
-    queryset = ACTIVIDADES[:6]
+    paginate_by = ACTIVIDADES_POR_PAGINA
     pagina = 'actividades'
 
 
 class NoticiaDetailView(PaginaMixin, DetailView):
-    """Detalle de noticia: /noticia/<id>/ (404 si no existe).
+    """Detalle de noticia: /noticia/<id>/ (404 si no existe)."""
 
-    Trabaja con la lista NOTICIAS (demo). Si más adelante se crea un modelo
-    en el admin, basta con declarar model = Noticia y eliminar get_object().
-    """
-
+    model = Noticia
     template_name = 'noticia.html'
     context_object_name = 'noticia'
     pagina = 'actualidad'
 
-    def get_object(self, queryset=None):
-        pk = self.kwargs.get('pk')
-        noticia = next((n for n in NOTICIAS if n['id'] == pk), None)
-        if noticia is None:
-            raise Http404(f'No existe la noticia {pk}')
-        return noticia
-
     def get_context_data(self, **kwargs):
         contexto = super().get_context_data(**kwargs)
-        indice = NOTICIAS.index(self.object)
-        contexto['anterior'] = NOTICIAS[indice - 1] if indice > 0 else None
+        contexto['anterior'] = (
+            Noticia.objects.filter(pk__lt=self.object.pk).order_by('-pk').first()
+        )
         contexto['siguiente'] = (
-            NOTICIAS[indice + 1] if indice + 1 < len(NOTICIAS) else None
+            Noticia.objects.filter(pk__gt=self.object.pk).order_by('pk').first()
         )
         return contexto

@@ -16,27 +16,24 @@
         class="hero-banda__img" width="1400" height="989" fetchpriority="high" decoding="async">
       <div class="hero-banda__sombra" aria-hidden="true"></div>
 
-      <div class="relative z-10 mx-auto w-full max-w-[1280px] px-6 pb-12 pt-32 md:px-10 md:pb-14 md:pt-40">
+      <div class="hero-banda__contenido">
         <div class="hero-rule" aria-hidden="true" data-reveal><i></i><i></i><i></i></div>
         <p class="eyebrow eyebrow--light" data-reveal>Contacto</p>
-        <h1 id="titulo-pagina"
-          class="mt-4 max-w-3xl font-display text-[clamp(2.1rem,5vw,3.6rem)] font-extrabold leading-[1.08] tracking-tight text-white"
-          data-reveal style="--reveal-delay:90ms">Hablemos</h1>
-        <p class="mt-5 max-w-2xl text-base leading-relaxed text-white/85 md:text-lg" data-reveal
-          style="--reveal-delay:150ms">
+        <h1 id="titulo-pagina" class="hero-banda__titulo" data-reveal style="--reveal-delay:90ms">Hablemos</h1>
+        <p class="hero-banda__texto" data-reveal style="--reveal-delay:150ms">
           Información general, canales oficiales y un formulario para escribir a Juventud Renovadora.
         </p>
       </div>
     </section>
 
     <!-- CANALES OFICIALES -->
-    <section class="mx-auto max-w-[1280px] px-6 py-16 md:px-10 md:py-20">
+    <section class="contenedor py-16 md:py-20">
       <div class="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
         <div>
           <p class="eyebrow" data-reveal>Canales oficiales</p>
           <h2 class="mt-4 font-display text-[clamp(1.7rem,3vw,2.3rem)] font-extrabold tracking-tight" data-reveal>Dónde
             encontrarnos</h2>
-          <p class="mt-4 max-w-md text-[1rem] leading-relaxed text-gris md:text-justify md:hyphens-auto" data-reveal style="--reveal-delay:60ms">
+          <p class="mt-4 max-w-md texto-cuerpo texto-justo" data-reveal style="--reveal-delay:60ms">
             Estos son los canales oficiales de Unamos. Juventud Renovadora no dispone todavía de
             cuentas propias ni de un correo institucional publicado.
           </p>
@@ -44,86 +41,46 @@
 
         <ul class="border-t border-tinta/10" data-reveal style="--reveal-delay:90ms">
           <li class="flex items-start gap-4 border-b border-tinta/10 py-5">
-            <span class="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-naranja-suave text-naranja"><svg
-                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                aria-hidden="true">
-                <circle cx="12" cy="12" r="10" />
-                <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
-                <path d="M2 12h20" />
-              </svg></span>
+            <span class="icono-lista"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-globo"></use></svg></span>
             <div class="min-w-0 flex-1">
-              <p class="font-semibold text-tinta md:text-justify md:hyphens-auto">Sitio web oficial</p>
-              <p class="mt-0.5 text-sm leading-relaxed text-gris md:text-justify md:hyphens-auto">Información institucional de Unamos.</p>
+              <p class="texto-justo font-semibold text-tinta">Sitio web oficial</p>
+              <p class="texto-justo mt-0.5 text-sm leading-relaxed text-gris">Información institucional de Unamos.</p>
             </div>
             <a class="link-arrow shrink-0 text-sm" href="https://unamosnic.org/" target="_blank"
               rel="noopener noreferrer">
-              unamosnic.org <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                aria-hidden="true">
-                <path d="M7 7h10v10" />
-                <path d="M7 17 17 7" />
-              </svg><span class="sr-only">(se abre en una pestaña nueva)</span>
+              unamosnic.org <svg class="icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-externo"></use></svg><span class="sr-only">(se abre en una pestaña nueva)</span>
             </a>
           </li>
 
           <li class="flex items-start gap-4 border-b border-tinta/10 py-5">
-            <span class="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-naranja-suave text-naranja"><svg
-                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                aria-hidden="true">
-                <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
-              </svg></span>
+            <span class="icono-lista"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-instagram"></use></svg></span>
             <div class="min-w-0 flex-1">
-              <p class="font-semibold text-tinta md:text-justify md:hyphens-auto">Instagram</p>
-              <p class="mt-0.5 text-sm leading-relaxed text-gris md:text-justify md:hyphens-auto">Publicaciones y convocatorias.</p>
+              <p class="texto-justo font-semibold text-tinta">Instagram</p>
+              <p class="texto-justo mt-0.5 text-sm leading-relaxed text-gris">Publicaciones y convocatorias.</p>
             </div>
             <a class="link-arrow shrink-0 text-sm" href="https://www.instagram.com/unamosnica/" target="_blank"
               rel="noopener noreferrer">
-              @unamosnica <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                aria-hidden="true">
-                <path d="M7 7h10v10" />
-                <path d="M7 17 17 7" />
-              </svg><span class="sr-only">(se abre en una pestaña nueva)</span>
+              @unamosnica <svg class="icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-externo"></use></svg><span class="sr-only">(se abre en una pestaña nueva)</span>
             </a>
           </li>
 
           <li class="flex items-start gap-4 border-b border-tinta/10 py-5">
-            <span class="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-naranja-suave text-naranja"><svg
-                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                aria-hidden="true">
-                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-              </svg></span>
+            <span class="icono-lista"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-facebook"></use></svg></span>
             <div class="min-w-0 flex-1">
-              <p class="font-semibold text-tinta md:text-justify md:hyphens-auto">Facebook</p>
-              <p class="mt-0.5 text-sm leading-relaxed text-gris md:text-justify md:hyphens-auto">Perfil oficial de Unamos.</p>
+              <p class="texto-justo font-semibold text-tinta">Facebook</p>
+              <p class="texto-justo mt-0.5 text-sm leading-relaxed text-gris">Perfil oficial de Unamos.</p>
             </div>
             <a class="link-arrow shrink-0 text-sm" href="https://www.facebook.com/share/1ADHnHSRpG/" target="_blank"
               rel="noopener noreferrer">
-              Ver perfil <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                aria-hidden="true">
-                <path d="M7 7h10v10" />
-                <path d="M7 17 17 7" />
-              </svg><span class="sr-only">(se abre en una pestaña nueva)</span>
+              Ver perfil <svg class="icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-externo"></use></svg><span class="sr-only">(se abre en una pestaña nueva)</span>
             </a>
           </li>
 
           <li class="flex items-start gap-4 border-b border-tinta/10 py-5">
-            <span class="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-naranja-suave text-naranja"><svg
-                xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                aria-hidden="true">
-                <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" />
-                <rect x="2" y="4" width="20" height="16" rx="2" />
-              </svg></span>
+            <span class="icono-lista"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-correo"></use></svg></span>
             <div class="min-w-0 flex-1">
-              <p class="font-semibold text-tinta md:text-justify md:hyphens-auto">Correo institucional</p>
-              <p class="mt-0.5 text-sm leading-relaxed text-gris md:text-justify md:hyphens-auto">Pendiente de publicar por la organización.</p>
+              <p class="texto-justo font-semibold text-tinta">Correo institucional</p>
+              <p class="texto-justo mt-0.5 text-sm leading-relaxed text-gris">Pendiente de publicar por la organización.</p>
             </div>
           </li>
         </ul>
@@ -132,26 +89,20 @@
 
     <!-- FORMULARIO -->
     <section class="border-y border-tinta/10 bg-hueso">
-      <div class="mx-auto max-w-[1280px] px-6 py-16 md:px-10 md:py-20">
+      <div class="contenedor py-16 md:py-20">
         <div class="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
           <div>
             <p class="eyebrow" data-reveal>Formulario</p>
             <h2 class="mt-4 font-display text-[clamp(1.7rem,3vw,2.3rem)] font-extrabold tracking-tight" data-reveal>
               Escríbenos</h2>
-            <p class="mt-4 max-w-md text-[1rem] leading-relaxed text-gris md:text-justify md:hyphens-auto" data-reveal style="--reveal-delay:60ms">
+            <p class="mt-4 max-w-md texto-cuerpo texto-justo" data-reveal style="--reveal-delay:60ms">
               Cuéntanos tu consulta y la revisaremos en cuanto el servicio de recepción esté
               conectado. Los campos son obligatorios.
             </p>
 
             <div class="aviso mt-6 max-w-md" data-reveal style="--reveal-delay:120ms">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                aria-hidden="true">
-                <circle cx="12" cy="12" r="10" />
-                <path d="M12 16v-4" />
-                <path d="M12 8h.01" />
-              </svg>
-              <p class="md:text-justify md:hyphens-auto"><strong>Envío pendiente de configuración.</strong> El formulario todavía no está
+              <svg class="icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-info"></use></svg>
+              <p class="texto-justo"><strong>Envío pendiente de configuración.</strong> El formulario todavía no está
                 conectado a ningún servicio: no se envía ni se almacena ningún dato personal.</p>
             </div>
           </div>
@@ -188,24 +139,14 @@
             </div>
 
             <div class="flex flex-wrap items-center gap-4 pt-1">
-              <button class="btn btn-primary" type="submit">Enviar mensaje <svg xmlns="http://www.w3.org/2000/svg"
-                  width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M5 12h14" />
-                  <path d="m12 5 7 7-7 7" />
-                </svg></button>
-              <p class="text-xs text-gris/70 md:text-justify md:hyphens-auto">Sin backend: no se envía nada.</p>
+              <button class="btn btn-primary" type="submit">Enviar mensaje
+                <svg class="icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-flecha"></use></svg></button>
+              <p class="texto-justo text-xs text-gris/70">Sin backend: no se envía nada.</p>
             </div>
 
             <div class="aviso" data-form-estado role="status" aria-live="polite" tabindex="-1">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                aria-hidden="true">
-                <circle cx="12" cy="12" r="10" />
-                <path d="M12 16v-4" />
-                <path d="M12 8h.01" />
-              </svg>
-              <p class="md:text-justify md:hyphens-auto">Estado actual: el envío está pendiente de configuración. Ningún dato se ha enviado ni almacenado.</p>
+              <svg class="icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-info"></use></svg>
+              <p class="texto-justo">Estado actual: el envío está pendiente de configuración. Ningún dato se ha enviado ni almacenado.</p>
             </div>
           </form>
         </div>

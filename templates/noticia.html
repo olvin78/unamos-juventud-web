@@ -10,15 +10,15 @@
 {% block content %}
     <!-- BANDA HERO (COMPACTA) -->
     <section class="border-b border-tinta/10 bg-hueso" aria-labelledby="titulo-pagina">
-      <div class="mx-auto w-full max-w-[860px] px-6 pb-12 pt-12 md:px-10 md:pb-12 md:pt-12">
+      <div class="mx-auto w-full max-w-[860px] px-6 py-12 md:px-10">
         <p class="eyebrow" data-reveal>Actualidad · Detalle</p>
         <h1 id="titulo-pagina"
-          class="mt-6 whitespace-nowrap font-display text-[clamp(0.85rem,3.8vw,2.9rem)] font-extrabold leading-[1.15] tracking-tight"
+          class="mt-6 font-display text-[clamp(1rem,5vw,3.6rem)] font-extrabold leading-[1.12] tracking-tight text-balance"
           data-reveal style="--reveal-delay:90ms">{{ noticia.titulo }}</h1>
         <div class="mt-6 flex flex-wrap items-center gap-3" data-reveal style="--reveal-delay:150ms">
           <span class="chip chip--cat">{{ noticia.categoria }}</span>
-          <time class="text-xs font-semibold uppercase tracking-wider text-gris/70"
-                datetime="{{ noticia.fecha }}">{{ noticia.fecha_legible }}</time>
+          <time class="meta-fecha"
+                datetime="{{ noticia.fecha|date:'Y-m-d' }}">{{ noticia.fecha_legible }}</time>
         </div>
       </div>
     </section>
@@ -30,7 +30,7 @@
              width="960" height="640" decoding="async">
       </figure>
       <div
-        class="mt-10 space-y-5 text-[1.02rem] leading-[1.85] text-tinta/80 md:text-justify md:hyphens-auto">
+        class="mt-10 space-y-5 texto-justo text-[1.02rem] leading-[1.85] text-tinta/80">
         {% for parrafo in noticia.contenido %}
         <p{% if forloop.first %} class="text-[1.12rem] leading-[1.75] text-tinta/90"{% endif %}>{{ parrafo }}</p>
         {% endfor %}

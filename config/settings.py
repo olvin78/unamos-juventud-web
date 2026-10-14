@@ -33,6 +33,11 @@ ALLOWED_HOSTS = [
     h for h in os.environ.get('DJANGO_ALLOWED_HOSTS', 'localhost,127.0.0.1').split(',') if h
 ]
 
+# Orígenes de confianza para el formulario (admin y contacto) tras el proxy/HTTPS.
+CSRF_TRUSTED_ORIGINS = [
+    o for o in os.environ.get('DJANGO_CSRF_TRUSTED_ORIGINS', '').split(',') if o
+]
+
 
 # Application definition
 
@@ -82,7 +87,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': os.environ.get('DJANGO_DB_PATH') or BASE_DIR / 'db.sqlite3',
     }
 }
 
