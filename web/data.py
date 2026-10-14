@@ -95,6 +95,112 @@ NOTICIAS = [
     },
 ]
 
+ESTADOS = {
+    'proxima': {'texto': 'Próxima', 'clase': 'chip--proxima'},
+    'finalizada': {'texto': 'Finalizada', 'clase': 'chip--finalizada'},
+    'pendiente': {'texto': 'Pendiente de confirmación', 'clase': 'chip--pendiente'},
+}
+
+ACTIVIDADES = [
+    {
+        'fecha': '2026-11-21',
+        'nombre': 'Foro de participación ciudadana',
+        'descripcion': 'Foro abierto para debatir propuestas de participación ciudadana; fecha y lugar por confirmar.',
+        'modalidad': 'Mixta',
+        'estado': 'proxima',
+    },
+    {
+        'fecha': '2026-11-08',
+        'nombre': 'Asamblea informativa juvenil',
+        'descripcion': 'Asamblea informativa para presentar la agenda de trabajo y los canales de participación juvenil.',
+        'modalidad': 'Presencial',
+        'estado': 'proxima',
+    },
+    {
+        'fecha': '2026-10-25',
+        'nombre': 'Taller de comunicación digital',
+        'descripcion': 'Taller en línea sobre comunicación digital y difusión de contenidos para jóvenes.',
+        'modalidad': 'Virtual',
+        'estado': 'proxima',
+    },
+    {
+        'fecha': '2026-10-18',
+        'nombre': 'Jornada de voluntariado',
+        'descripcion': 'Jornada de voluntariado con actividades comunitarias; pendiente de confirmación de fecha y sede.',
+        'modalidad': 'Presencial',
+        'estado': 'pendiente',
+    },
+    {
+        'fecha': '2026-09-27',
+        'nombre': 'Encuentro de bienvenida',
+        'descripcion': 'Encuentro de bienvenida para nuevas y nuevos integrantes de la red juvenil.',
+        'modalidad': 'Presencial',
+        'estado': 'finalizada',
+    },
+    {
+        'fecha': '2026-09-13',
+        'nombre': 'Reunión de planificación',
+        'descripcion': 'Reunión de planificación de actividades del periodo.',
+        'modalidad': 'Presencial',
+        'estado': 'finalizada',
+    },
+]
+
+# Efemérides de referencia (fechas públicas verificables; año solo para el formato).
+EFEMERIDES = [
+    {
+        'fecha': '2026-01-18',
+        'titulo': 'Nacimiento de Rubén Darío',
+        'detalle': 'Poeta nacional de Nicaragua (1867)',
+        'tipo': 'Cultura',
+    },
+    {
+        'fecha': '2026-01-20',
+        'titulo': 'Fiestas de San Sebastián',
+        'detalle': 'Fiestas patronales de Diriamba',
+        'tipo': 'Cultura',
+    },
+    {
+        'fecha': '2026-06-05',
+        'titulo': 'Día Mundial del Medio Ambiente',
+        'detalle': 'Convocatoria de Naciones Unidas',
+        'tipo': 'Ambiente',
+    },
+    {
+        'fecha': '2026-08-12',
+        'titulo': 'Día Internacional de la Juventud',
+        'detalle': 'Proclamado por Naciones Unidas',
+        'tipo': 'Juventud',
+    },
+    {
+        'fecha': '2026-09-15',
+        'titulo': 'Independencia de Centroamérica',
+        'detalle': '1821',
+        'tipo': 'Historia',
+    },
+]
+
+
+def _partes(iso):
+    """'2026-11-21' → ('2026', '11', '21')"""
+    anio, mes, dia = iso.split('-')
+    return anio, mes, dia
+
+
 for _n in NOTICIAS:
-    _a, _m, _d = _n['fecha'].split('-')
-    _n['fecha_legible'] = f"{int(_d)} {MESES_ES[int(_m) - 1]} {_a}"
+    _anio, _mes, _dia = _partes(_n['fecha'])
+    _n['fecha_legible'] = f"{int(_dia)} {MESES_ES[int(_mes) - 1]} {_anio}"
+    _n['fecha_compacta'] = f"{int(_dia)} {MESES_ES[int(_mes) - 1]} {_anio}"
+
+for _a in ACTIVIDADES:
+    _anio, _mes, _dia = _partes(_a['fecha'])
+    _a['dia'] = _dia
+    _a['mes'] = MESES_ES[int(_mes) - 1]
+    _a['anio'] = _anio
+    _a['estado_texto'] = ESTADOS[_a['estado']]['texto']
+    _a['estado_clase'] = ESTADOS[_a['estado']]['clase']
+
+for _e in EFEMERIDES:
+    _anio, _mes, _dia = _partes(_e['fecha'])
+    _e['dia'] = _dia
+    _e['mes'] = MESES_ES[int(_mes) - 1]
