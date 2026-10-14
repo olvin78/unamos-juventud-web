@@ -1,10 +1,10 @@
 # Header y footer — cómo actualizarlos
 
-El header y el footer están **duplicados en las 10 páginas** (todas en `templates/`,
+El header y el footer están **duplicados en las 11 páginas** (todas en `templates/`,
 incluida la portada `index.html`).
 No existe un sistema de plantillas: es una decisión deliberada para mantener el proyecto simple.
 
-Cualquier cambio debe aplicarse en las 10 páginas para que sigan siendo idénticos.
+Cualquier cambio debe aplicarse en las 11 páginas para que sigan siendo idénticos.
 
 ## Dónde están
 
@@ -52,6 +52,6 @@ Solo tres cosas pueden (y deben) cambiar:
 1. Edita el bloque en `templates/index.html`.
 2. Copia el bloque modificado a las 9 páginas restantes de `templates/`.
 3. Ajusta las rutas (añade o quita `../`) y mueve `aria-current="page"` a la página correcta.
-4. Abre las 10 páginas y comprueba que el menú, el logo y los enlaces son correctos
+4. Abre las 11 páginas y comprueba que el menú, el logo y los enlaces son correctos
    (también a 1100 px → hamburguesa y a 1280 px → navegación completa).
 5. `npm run check` para una verificación automática.

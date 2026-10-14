@@ -9,6 +9,7 @@ const PAGINAS = [
   ['/', 'inicio'],
   ['/templates/nosotros.html', 'nosotros'],
   ['/templates/actualidad.html', 'actualidad'],
+  ['/noticia/1/', 'noticia'],
   ['/templates/actividades.html', 'actividades'],
   ['/templates/medioambiente.html', 'medioambiente'],
   ['/templates/donaciones.html', 'donaciones'],
@@ -281,6 +282,131 @@ try {
 
     if (ruta.includes('actualidad') && datos.noticias !== 6)
       fallo(`${ruta} → noticias renderizadas: ${datos.noticias}`);
+
+    if (ruta.startsWith('/noticia/')) {
+      const det = await pagina.evaluate(() => ({
+        titulo: document.querySelector('h1')?.textContent.trim() || '',
+        categoria: document.querySelector('.chip--cat')?.textContent.trim() || '',
+        parrafos: document.querySelectorAll('article .space-y-5 p').length,
+        foto: document.querySelector('article figure img')?.getAttribute('src') || '',
+        volver: !!document.querySelector('a[href="/templates/actualidad.html"]'),
+        siguiente: !!document.querySelector('a[href="/noticia/2/"]'),
+      }));
+      if (!det.titulo.includes('reunión informativa'))
+        fallo(`${ruta} → título de la noticia: «${det.titulo}»`);
+      else ok(`${ruta} → título renderizado por Django`);
+      if (det.categoria !== 'Comunicado') fallo(`${ruta} → categoría: «${det.categoria}»`);
+      if (det.parrafos < 4) fallo(`${ruta} → párrafos del cuerpo: ${det.parrafos}`);
+      else ok(`${ruta} → cuerpo del artículo renderizado`);
+      if (!det.foto.includes('static/img/noticias/')) fallo(`${ruta} → imagen del artículo: ${det.foto}`);
+      if (!det.volver || !det.siguiente) fallo(`${ruta} → faltan enlaces de navegación (volver/siguiente)`);
+      else ok(`${ruta} → navegación anterior/siguiente/volver`);
+      const noExiste = await pagina.goto(BASE + '/noticia/99/', { waitUntil: 'networkidle2' });
+      if (noExiste.status() !== 404) fallo(`/noticia/99/ → HTTP ${noExiste.status()} (esperado 404)`);
+      else ok('/noticia/99/ → HTTP 404 para id inexistente');
+      const vieja = await pagina.goto(BASE + '/templates/noticia.html?id=2', { waitUntil: 'networkidle2' });
+      if (vieja.status() !== 200 || !pagina.url().endsWith('/noticia/2/'))
+        fallo(`templates/noticia.html?id=2 → redirige a ${pagina.url()}`);
+      else ok('templates/noticia.html?id=2 → redirige a /noticia/2/');
+      await pagina.goto(BASE + ruta, { waitUntil: 'networkidle2' });
+    }
+    if (ruta.includes('nosotros')) {
+      const nos = await pagina.evaluate(() => ({
+        h1: document.querySelector('h1')?.textContent?.trim() || '',
+        principios: document.querySelectorAll('.principio').length,
+        ambitos: document.querySelectorAll('[data-ambitos] .punto').length,
+        faq: document.querySelectorAll('.faq__item').length,
+        faqCerradas: [...document.querySelectorAll('.faq__pregunta')].every(
+          (b) => b.getAttribute('aria-expanded') === 'false'
+        ),
+        faqEnlazadas: [...document.querySelectorAll('.faq__pregunta')].every((b) =>
+          Boolean(document.getElementById(b.getAttribute('aria-controls')))
+        ),
+        hitos: document.querySelectorAll('[data-trayectoria] .hito').length,
+        canales: document.querySelectorAll('[data-canales-jr] .canal').length,
+        enlaceRedes: !!document.querySelector('a[href="https://unamosnic.org/nuestras-redes/"]'),
+        imagenes: document.querySelectorAll('main img').length,
+        creditos: document.querySelectorAll('main figcaption.foto-credito').length,
+        imgsRotas: [...document.querySelectorAll('main img')].filter(
+          (i) => i.complete && i.naturalWidth === 0
+        ).length,
+      }));
+
+      if (nos.h1 !== 'Conoce Juventud Renovadora') fallo(`${ruta} → h1: «${nos.h1}»`);
+      else ok(`${ruta} → h1 «Conoce Juventud Renovadora»`);
+      if (nos.principios !== 5) fallo(`${ruta} → principios: ${nos.principios} (esperados 5)`);
+      else ok(`${ruta} → 5 principios`);
+      if (nos.ambitos !== 4) fallo(`${ruta} → ámbitos de trabajo: ${nos.ambitos} (esperados 4)`);
+      else ok(`${ruta} → 4 ámbitos de trabajo`);
+      if (nos.faq !== 5 || !nos.faqCerradas || !nos.faqEnlazadas)
+        fallo(`${ruta} → FAQ: ${nos.faq} ítems, cerradas: ${nos.faqCerradas}, enlazadas: ${nos.faqEnlazadas}`);
+      else ok(`${ruta} → 5 preguntas con acordeón accesible`);
+      if (nos.hitos < 3) fallo(`${ruta} → trayectoria: ${nos.hitos} referencias (mínimo 3)`);
+      else ok(`${ruta} → trayectoria con ${nos.hitos} referencias documentadas`);
+      if (nos.canales !== 4) fallo(`${ruta} → canales: ${nos.canales} (esperados 4)`);
+      else ok(`${ruta} → 4 canales oficiales`);
+      if (!nos.enlaceRedes) fallo(`${ruta} → falta el enlace a unamosnic.org/nuestras-redes/`);
+      else ok(`${ruta} → enlace a la ficha oficial`);
+      if (nos.imagenes !== 3 || nos.creditos !== 0)
+        fallo(`${ruta} → fotos: ${nos.imagenes}, créditos: ${nos.creditos} (esperados 3 y 0)`);
+      else ok(`${ruta} → 3 fotografías ilustrativas sin crédito visible`);
+      if (nos.imgsRotas) fallo(`${ruta} → imágenes rotas: ${nos.imgsRotas}`);
+
+      await pagina.click('.faq__pregunta');
+      await new Promise((r) => setTimeout(r, 200));
+      const faqAbierta = await pagina.evaluate(() => {
+        const b = document.querySelector('.faq__pregunta');
+        const p = document.getElementById(b.getAttribute('aria-controls'));
+        return { exp: b.getAttribute('aria-expanded'), oculto: p.hidden };
+      });
+      if (faqAbierta.exp !== 'true' || faqAbierta.oculto)
+        fallo(`${ruta} → el acordeón no se abre con clic (${JSON.stringify(faqAbierta)})`);
+      else ok(`${ruta} → el acordeón se abre con clic`);
+
+      await pagina.click('.faq__item:nth-child(2) .faq__pregunta');
+      await new Promise((r) => setTimeout(r, 200));
+      const unaSola = await pagina.evaluate(() => {
+        const abiertas = [...document.querySelectorAll('.faq__pregunta')].filter(
+          (b) => b.getAttribute('aria-expanded') === 'true'
+        );
+        return abiertas.length;
+      });
+      if (unaSola !== 1) fallo(`${ruta} → preguntas abiertas a la vez: ${unaSola} (esperadas 1)`);
+      else ok(`${ruta} → solo una pregunta abierta a la vez`);
+
+      await pagina.evaluate(() => window.scrollTo(0, 0));
+      await new Promise((r) => setTimeout(r, 250));
+    }
+
+    if (ruta.includes('actualidad') && datos.noticias !== 6)
+      fallo(`${ruta} → noticias renderizadas: ${datos.noticias}`);
+
+    if (ruta.includes('noticia.html')) {
+      const det = await pagina.evaluate(() => ({
+        titulo: document.querySelector('[data-noticia-titulo]')?.textContent.trim() || '',
+        categoria: document.querySelector('[data-noticia-meta] .chip--cat')?.textContent.trim() || '',
+        parrafos: document.querySelectorAll('[data-noticia] p').length,
+        foto: document.querySelector('[data-noticia] figure img')?.getAttribute('src') || '',
+        volver: !!document.querySelector('a[href="actualidad.html"]'),
+        siguiente: !!document.querySelector('a[href="noticia.html?id=2"]'),
+      }));
+      if (!det.titulo.includes('reunión informativa'))
+        fallo(`${ruta} → título de la noticia: «${det.titulo}»`);
+      else ok(`${ruta} → título dinámico correcto`);
+      if (det.categoria !== 'Comunicado') fallo(`${ruta} → categoría: «${det.categoria}»`);
+      if (det.parrafos < 3) fallo(`${ruta} → párrafos del cuerpo: ${det.parrafos}`);
+      else ok(`${ruta} → cuerpo del artículo renderizado`);
+      if (!det.foto.includes('static/img/noticias/')) fallo(`${ruta} → imagen del artículo: ${det.foto}`);
+      if (!det.volver || !det.siguiente) fallo(`${ruta} → faltan enlaces de navegación (volver/siguiente)`);
+      else ok(`${ruta} → navegación anterior/siguiente/volver`);
+      await pagina.goto(BASE + '/templates/noticia.html?id=99', { waitUntil: 'networkidle2' });
+      const noExiste = await pagina.evaluate(
+        () => document.querySelector('h1')?.textContent.trim() || ''
+      );
+      if (!noExiste.includes('no encontrada')) fallo(`${ruta} → id inexistente: «${noExiste}»`);
+      else ok(`${ruta} → estado «no encontrado» para id inexistente`);
+      await pagina.goto(BASE + ruta, { waitUntil: 'networkidle2' });
+    }
     if (ruta.includes('actividades') && datos.actividades !== 6)
       fallo(`${ruta} → actividades renderizadas: ${datos.actividades}`);
 

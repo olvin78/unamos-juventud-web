@@ -6,11 +6,24 @@ Django mantiene el panel de administración y sirve la web estática
 """
 from django.conf import settings
 from django.contrib import admin
+from django.http import HttpResponseRedirect
 from django.urls import path, re_path
 from django.views.static import serve
 from django.views.generic import RedirectView
 
+from config.views import NoticiaDetailView
+
 INDEX = "/templates/index.html"
+
+
+def noticia_antigua(request):
+    """Compatibilidad: /templates/noticia.html?id=2 → /noticia/2/"""
+    try:
+        pk = int(request.GET.get("id", 1))
+    except ValueError:
+        pk = 1
+    return HttpResponseRedirect(f"/noticia/{pk}/")
+
 
 urlpatterns = [
     path(
@@ -22,6 +35,12 @@ urlpatterns = [
         "index.html",
         RedirectView.as_view(url=INDEX, permanent=False),
     ),
+    path(
+        "noticia/<int:pk>/",
+        NoticiaDetailView.as_view(),
+        name="noticia",
+    ),
+    path("templates/noticia.html", noticia_antigua),
     re_path(
         r"^templates/(?P<path>[\w./-]+\.html)$",
         serve,

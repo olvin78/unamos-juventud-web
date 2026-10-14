@@ -112,4 +112,4 @@ no muestra pagos ni métodos de pago.
 - `static/img/logos/logo.svg` y `favicon.svg` son temporales (monograma `JR`).
 - El header y el footer usan el logotipo tipográfico en HTML; cuando exista el oficial,
   sustituye ese bloque por `<img src="…/logo-oficial.svg" alt="Juventud Renovadora UNAMOS">`
-  en las 10 páginas (ver `docs/header-footer.md`).
+  en las 11 páginas (ver `docs/header-footer.md`).

@@ -25,7 +25,7 @@ preguntas frecuentes y canales oficiales de Juventud Renovadora.
 
 | Tecnología | Uso |
 |---|---|
-| HTML5 semántico | Marcado de las 10 páginas |
+| HTML5 semántico | Marcado de las 11 páginas |
 | Tailwind CSS 4 (CLI) | Compilación oficial de estilos → `static/css/output.css` |
 | JavaScript vanilla ES6+ | Menú, animaciones, datos demo y formulario |
 | Lenis | Desplazamiento suave (opcional, se desactiva con `prefers-reduced-motion`) |
@@ -73,6 +73,7 @@ unamos-juventud-web/
 │   ├── index.html              Página de inicio (portada Fase 3: 9 secciones)
 │   ├── nosotros.html           Sobre nosotros (Fase 4: 9 secciones)
 │   ├── actualidad.html         Actualidad
+│   ├── noticia.html            Detalle dinámico de noticia (?id=N)
 │   ├── actividades.html        Actividades y calendario
 │   ├── medioambiente.html      Medioambiente (nueva en Fase 2)
 │   ├── donaciones.html         Donaciones
@@ -190,10 +191,10 @@ contenido oficial: no hay que tocar ningún HTML para cambiar noticias o activid
 
 ## Cómo actualizar los enlaces
 
-- **Enlaces internos:** las 10 páginas viven en `templates/` y usan rutas relativas entre
+- **Enlaces internos:** las 11 páginas viven en `templates/` y usan rutas relativas entre
   hermanas (`contacto.html`, `index.html`). Django redirige `/` y `/index.html` a
   `/templates/index.html`; los estáticos se referencian como `../static/…`.
-- **Enlaces externos (canales oficiales):** aparecen en el footer de las 10 páginas, en
+- **Enlaces externos (canales oficiales):** aparecen en el footer de las 11 páginas, en
   `templates/contacto.html` y en `templates/nosotros.html`:
   - https://unamosnic.org/
   - https://www.instagram.com/unamosnica/
@@ -207,8 +208,8 @@ contenido oficial: no hay que tocar ningún HTML para cambiar noticias o activid
 
 ## Actualizar header y footer
 
-El header y el footer están **duplicados a propósito** en las 10 páginas (no hay sistema de
-plantillas para mantenerlo sencillo). Si cambias uno, aplica el mismo cambio en las 10 páginas:
+El header y el footer están **duplicados a propósito** en las 11 páginas (no hay sistema de
+plantillas para mantenerlo sencillo). Si cambias uno, aplica el mismo cambio en las 11 páginas:
 
 ```bash
 grep -n "site-header" templates/*.html
@@ -293,13 +294,13 @@ alterna fondo claro y blanco, con la sección de contacto en azul como en el res
 ## Comprobaciones
 
 ```bash
-npm run check        # abre las 10 páginas con Chromium y verifica enlaces, JS, menú,
+npm run check        # abre las 11 páginas con Chromium y verifica enlaces, JS, menú,
                      # breakpoints (1100/1280), responsive, medioambiente, las
                      # 9 secciones de la portada y la página «Sobre nosotros»
                      # (principios, ámbitos, acordeón de preguntas y canales)
 ```
 
-Comprobación manual: `manage.py check`, y abrir las 10 páginas en el navegador a distintos
+Comprobación manual: `manage.py check`, y abrir las 11 páginas en el navegador a distintos
 tamaños (escritorio, tablet y móvil).
 
 ---
