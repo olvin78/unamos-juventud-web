@@ -926,6 +926,14 @@
 @media (min-width: 768px) {
   .card--destacada {
     grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+  }
+
+  .card--destacada .card__media {
+    aspect-ratio: auto;
+    height: 100%;
+    min-height: 340px;
   }
 
   .card--destacada .card__body {
