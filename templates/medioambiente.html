@@ -80,7 +80,7 @@
           </div>
         </div>
 
-        <p class="mt-6 text-xs leading-relaxed text-gris/70 md:text-justify md:hyphens-auto" data-reveal>
+        <p class="texto-justo mt-6 text-xs leading-relaxed text-gris/70" data-reveal>
           Cifras de referencia con fines divulgativos: listado nacional de áreas protegidas,
           meta oficial de energías renovables (IRENA/INE) y datos geográficos generales.
         </p>
@@ -279,17 +279,17 @@
     </section>
 
     <!-- SOSTENIBILIDAD -->
-    <section id="sostenibilidad" class="mx-auto max-w-[1280px] px-6 py-20 md:px-10 md:py-24">
+    <section id="sostenibilidad" class="contenedor py-20 md:py-24">
       <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
         <div>
           <p class="eyebrow eyebrow--verde" data-reveal>Sostenibilidad</p>
-          <h2 class="mt-4 font-display text-[clamp(1.7rem,3vw,2.4rem)] font-extrabold tracking-tight" data-reveal>Crecer sin agotar el futuro</h2>
-          <div class="mt-6 space-y-4 text-[1rem] leading-relaxed text-gris">
-            <p class="md:text-justify md:hyphens-auto" data-reveal style="--reveal-delay:60ms">
+          <h2 class="mt-4 titulo-seccion titulo-seccion--sm" data-reveal>Crecer sin agotar el futuro</h2>
+          <div class="mt-6 space-y-4 texto-cuerpo">
+            <p class="texto-justo" data-reveal style="--reveal-delay:60ms">
               El desarrollo sostenible busca satisfacer las necesidades del presente sin comprometer
               la capacidad de las generaciones futuras para cubrir las suyas.
             </p>
-            <p class="md:text-justify md:hyphens-auto" data-reveal style="--reveal-delay:120ms">
+            <p class="texto-justo" data-reveal style="--reveal-delay:120ms">
               Aplicado al territorio, significa usar el agua, la tierra y la energía de manera
               responsable. En ese sentido, Nicaragua ha fijado una meta oficial de generar el 91%
               de su electricidad con fuentes renovables para 2027, apoyándose en viento, geotermia,
@@ -298,10 +298,10 @@
           </div>
           <div class="mt-7 flex flex-wrap items-center gap-6" data-reveal style="--reveal-delay:180ms">
             <a class="link-arrow link-arrow--azul" href="{% url 'actividades' %}">
-              Consultar actividades <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              Consultar actividades <svg class="icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-flecha"></use></svg>
             </a>
             <a class="link-arrow link-arrow--verde" href="{% url 'inicio' %}#medioambiente">
-              Volver a la portada <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              Volver a la portada <svg class="icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-flecha"></use></svg>
             </a>
           </div>
         </div>
@@ -318,7 +318,7 @@
 
     <!-- AMENAZAS -->
     <section id="amenazas" class="bg-verde-profundo text-white">
-      <div class="mx-auto max-w-[1280px] px-6 py-16 md:px-10 md:py-20">
+      <div class="contenedor py-16 md:py-20">
         <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <figure data-reveal="escala">
             <span class="fig-zoom">
@@ -330,15 +330,15 @@
           </figure>
           <div>
             <p class="eyebrow eyebrow--verde-claro" data-reveal>Amenazas</p>
-            <h2 class="mt-4 font-display text-[clamp(1.7rem,3vw,2.4rem)] font-extrabold tracking-tight text-white" data-reveal>Lo que está en juego</h2>
+            <h2 class="mt-4 titulo-seccion titulo-seccion--sm text-white" data-reveal>Lo que está en juego</h2>
             <div class="mt-6 space-y-4 text-[1rem] leading-relaxed text-white/80">
-              <p class="md:text-justify md:hyphens-auto" data-reveal style="--reveal-delay:60ms">
+              <p class="texto-justo" data-reveal style="--reveal-delay:60ms">
                 Nicaragua ha perdido cerca de la mitad de su cobertura boscosa desde 1950. Las
                 regiones del Caribe Norte y Sur y los territorios de Bosawás e Indio Maíz —donde
                 se concentra más del 80% de los bosques del país— aportaron el 100% de la
                 deforestación nacional registrada entre 2005 y 2015.
               </p>
-              <p class="md:text-justify md:hyphens-auto" data-reveal style="--reveal-delay:120ms">
+              <p class="texto-justo" data-reveal style="--reveal-delay:120ms">
                 En 2025 se perdieron unas 54.000 hectáreas de bosque natural, equivalentes a
                 unos 33 millones de toneladas de CO₂. A la frontera agrícola se suma la minería
                 de oro artesanal, que usa mercurio para separar el metal.
@@ -347,16 +347,16 @@
 
             <div class="mt-8 grid gap-4 sm:grid-cols-2">
               <div class="rounded-2xl border border-white/10 bg-white/5 p-5" data-reveal style="--reveal-delay:150ms">
-                <p class="font-display text-[2rem] font-extrabold leading-none text-ambar md:text-justify md:hyphens-auto">80%</p>
-                <p class="mt-3 text-sm leading-relaxed text-white/70 md:text-justify md:hyphens-auto">de las mujeres indígenas muestreadas en comunidades del río Wangki superan el umbral de mercurio de 1 ppm (EPA)</p>
+                <p class="cifra texto-justo text-[2rem] text-ambar">80%</p>
+                <p class="texto-justo mt-3 text-sm leading-relaxed text-white/70">de las mujeres indígenas muestreadas en comunidades del río Wangki superan el umbral de mercurio de 1 ppm (EPA)</p>
               </div>
               <div class="rounded-2xl border border-white/10 bg-white/5 p-5" data-reveal style="--reveal-delay:210ms">
-                <p class="font-display text-[2rem] font-extrabold leading-none text-ambar md:text-justify md:hyphens-auto">4,64</p>
-                <p class="mt-3 text-sm leading-relaxed text-white/70 md:text-justify md:hyphens-auto">ppm, el nivel máximo de mercurio en cabello registrado en Li Lamni —más de cuatro veces el umbral de riesgo fetal</p>
+                <p class="cifra texto-justo text-[2rem] text-ambar">4,64</p>
+                <p class="texto-justo mt-3 text-sm leading-relaxed text-white/70">ppm, el nivel máximo de mercurio en cabello registrado en Li Lamni —más de cuatro veces el umbral de riesgo fetal</p>
               </div>
             </div>
 
-            <p class="mt-6 text-xs leading-relaxed text-white/50 md:text-justify md:hyphens-auto" data-reveal style="--reveal-delay:240ms">
+            <p class="texto-justo mt-6 text-xs leading-relaxed text-white/50" data-reveal style="--reveal-delay:240ms">
               Fuentes: monitoreo de MARENA y Global Forest Watch (deforestación); estudio de IPEN
               sobre mercurio en cabello de mujeres indígenas de Li Auhbra y Li Lamni, publicado
               en octubre de 2025. El mercurio llega a las personas a través del pescado que
@@ -369,15 +369,15 @@
 
     <!-- CIERRE -->
     <section class="bg-tinta text-white border-t border-white/10">
-      <div class="mx-auto flex max-w-[1280px] flex-col items-start gap-6 px-6 py-16 md:flex-row md:items-center md:justify-between md:px-10 md:py-20">
+      <div class="cierre-fila">
         <div>
-          <h2 class="font-display text-[clamp(1.6rem,3vw,2.2rem)] font-extrabold tracking-tight text-white">Conoce la agenda de actividades</h2>
-          <p class="mt-2 max-w-xl text-white/70 md:text-justify md:hyphens-auto">
+          <h2 class="titulo-seccion titulo-seccion--cierre text-white">Conoce la agenda de actividades</h2>
+          <p class="texto-justo mt-2 max-w-xl text-white/70">
             Consulta las próximas convocatorias y el estado de cada actividad en el calendario
             de Juventud Renovadora.
           </p>
         </div>
-        <a class="btn btn-primary shrink-0" href="{% url 'actividades' %}">Ver actividades <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+        <a class="btn btn-primary shrink-0" href="{% url 'actividades' %}">Ver actividades <svg class="icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-flecha"></use></svg></a>
       </div>
     </section>
 {% endblock %}

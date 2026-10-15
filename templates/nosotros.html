@@ -37,12 +37,11 @@
     </section>
 
     <!-- QUIÉNES SOMOS -->
-    <section id="quienes" class="mx-auto max-w-[1280px] px-6 py-20 md:px-10 md:py-28">
+    <section id="quienes" class="contenedor py-20 md:py-28">
       <div class="max-w-3xl">
         <p class="eyebrow" data-reveal>Presentación</p>
-        <h2 class="mt-5 font-display text-[clamp(2rem,4vw,3.1rem)] font-extrabold leading-tight tracking-tight"
-          data-reveal>¿Quiénes somos?</h2>
-        <p class="lead mt-5 md:text-justify md:hyphens-auto" data-reveal style="--reveal-delay:90ms">
+        <h2 class="mt-5 titulo-seccion" data-reveal>¿Quiénes somos?</h2>
+        <p class="lead texto-justo mt-5" data-reveal style="--reveal-delay:90ms">
           La Juventud Renovadora es el espacio de la juventud de Unamos: un lugar para organizarse, participar y
           ejercer liderazgo juvenil en Nicaragua.
         </p>
@@ -51,13 +50,13 @@
       <div class="mt-12 grid gap-10 md:grid-cols-2 md:gap-14">
         <div data-reveal>
           <h3 class="font-display text-[1.15rem] font-bold">Un espacio juvenil de Unamos</h3>
-          <div class="mt-4 space-y-4 text-[1rem] leading-relaxed text-gris text-pretty md:text-justify md:hyphens-auto">
-            <p class="md:text-justify md:hyphens-auto">
+          <div class="mt-4 space-y-4 texto-cuerpo text-pretty">
+            <p class="texto-justo">
               Juventud Renovadora integra a jóvenes de 16 a 35 años comprometidos con la construcción de una Nicaragua
               democrática, libre, justa e inclusiva, y promueve una participación política activa, plural y
               responsable.
             </p>
-            <p class="md:text-justify md:hyphens-auto">
+            <p class="texto-justo">
               El trabajo de la red se orienta a fortalecer nuevos liderazgos, impulsar la formación política y
               ciudadana, y generar espacios donde las juventudes puedan aportar sus ideas, capacidades y propuestas a
               los desafíos del país.
@@ -67,30 +66,25 @@
 
         <div data-reveal style="--reveal-delay:120ms">
           <h3 class="font-display text-[1.15rem] font-bold">Parte de Unamos</h3>
-          <div class="mt-4 space-y-4 text-[1rem] leading-relaxed text-gris text-pretty md:text-justify md:hyphens-auto">
-            <p class="md:text-justify md:hyphens-auto">
+          <div class="mt-4 space-y-4 texto-cuerpo text-pretty">
+            <p class="texto-justo">
               Juventud Renovadora es la red juvenil de Unamos, partido político nicaragüense. Su programa trabaja por
               oportunidades, progreso, solidaridad, democracia y justicia, y soberanía para todas y todos.
             </p>
-            <p class="md:text-justify md:hyphens-auto">
+            <p class="texto-justo">
               En esta página presentamos quiénes somos, qué buscamos, en qué ámbitos trabajamos y dónde consultar la
               información oficial, sin publicar cargos, fechas ni cifras que no estén confirmados.
             </p>
           </div>
           <div class="mt-7" data-reveal>
             <a class="btn btn-dark" href="https://unamosnic.org/" target="_blank" rel="noopener noreferrer">
-              Web oficial de Unamos <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                aria-hidden="true">
-                <path d="M7 7h10v10" />
-                <path d="M7 17 17 7" />
-              </svg><span class="sr-only">(se abre en una pestaña nueva)</span>
+              Web oficial de Unamos <svg class="icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-externo"></use></svg><span class="sr-only">(se abre en una pestaña nueva)</span>
             </a>
           </div>
         </div>
       </div>
 
-      <p class="mt-10 max-w-3xl text-xs leading-relaxed text-gris/75 md:text-justify md:hyphens-auto" data-reveal>
+      <p class="texto-nota texto-justo mt-10 max-w-3xl" data-reveal>
         Descripción basada en la ficha oficial de Juventud Renovadora publicada por Unamos:
         <a class="font-semibold text-azul underline-offset-2 hover:underline"
           href="https://unamosnic.org/nuestras-redes/" target="_blank"
@@ -101,8 +95,7 @@
 
     <!-- MISIÓN -->
     <section id="mision" class="border-y border-tinta/10 bg-hueso">
-      <div
-        class="mx-auto grid max-w-[1280px] items-center gap-12 px-6 py-20 md:px-10 md:py-24 lg:grid-cols-2 lg:gap-16">
+      <div class="contenedor grid items-center gap-12 py-20 md:py-24 lg:grid-cols-2 lg:gap-16">
         <figure class="foto aspect-[4/3]" data-reveal="izq">
           <img src="{% static 'img/nicaragua/participacion-esteli.jpg' %}"
             alt="Niña pintando en un taller de arte en Estelí, Nicaragua. Imagen ilustrativa." width="1400" height="989"
@@ -111,10 +104,9 @@
 
         <div data-reveal="der">
           <p class="eyebrow eyebrow--azul">Misión</p>
-          <h2 class="mt-5 font-display text-[clamp(2rem,4vw,3.1rem)] font-extrabold leading-tight tracking-tight">
-            Nuestra misión</h2>
+          <h2 class="mt-5 titulo-seccion">Nuestra misión</h2>
           <span class="mt-6 block h-1 w-16 rounded-full bg-naranja" aria-hidden="true"></span>
-          <p class="mt-6 font-display text-[clamp(1.25rem,2.2vw,1.6rem)] font-semibold leading-snug text-tinta md:text-justify md:hyphens-auto">
+          <p class="texto-justo mt-6 font-display text-[clamp(1.25rem,2.2vw,1.6rem)] font-semibold leading-snug text-tinta">
             Formar jóvenes en política y ciudadanía, abrir espacios reales de participación y fortalecer nuevos
             liderazgos que aporten ideas y propuestas a los desafíos de Nicaragua.
           </p>
@@ -123,7 +115,7 @@
             <span class="chip chip--azul">Nuevos liderazgos</span>
             <span class="chip chip--verde">Ideas y propuestas</span>
           </div>
-          <p class="mt-7 text-xs leading-relaxed text-gris/75 md:text-justify md:hyphens-auto">
+          <p class="texto-nota texto-justo mt-7">
             Síntesis de los objetivos publicados por Unamos para su red juvenil; no es una declaración estatutaria.
           </p>
         </div>
@@ -134,13 +126,12 @@
     <!-- VISIÓN: texto elaborado a partir de la descripción oficial de Juventud Renovadora
          (unamosnic.org/nuestras-redes). Pendiente de validación por la organización
          antes de publicarlo como declaración institucional. -->
-    <section id="vision" class="mx-auto max-w-[1280px] px-6 py-20 md:px-10 md:py-24">
+    <section id="vision" class="contenedor py-20 md:py-24">
       <div
         class="mx-auto max-w-4xl rounded-[28px] border border-tinta/10 bg-hueso px-7 py-14 text-center shadow-[0_34px_64px_-52px_rgba(17,24,39,0.7)] md:px-16 md:py-16"
         data-reveal>
         <p class="eyebrow eyebrow--azul">Visión</p>
-        <h2 class="mt-5 font-display text-[clamp(2rem,4vw,3.1rem)] font-extrabold leading-tight tracking-tight">
-          Nuestra visión</h2>
+        <h2 class="mt-5 titulo-seccion">Nuestra visión</h2>
 
         <span class="mt-8 block font-display text-[4.5rem] font-extrabold leading-[0.6] text-naranja/35"
           aria-hidden="true">&ldquo;</span>
@@ -162,90 +153,56 @@
 
     <!-- PRINCIPIOS -->
     <section id="principios" class="border-y border-tinta/10 bg-hueso">
-      <div class="mx-auto max-w-[1280px] px-6 py-20 md:px-10 md:py-24">
+      <div class="contenedor py-20 md:py-24">
         <div class="max-w-3xl">
           <p class="eyebrow" data-reveal>Principios</p>
-          <h2 class="mt-5 font-display text-[clamp(2rem,4vw,3.1rem)] font-extrabold leading-tight tracking-tight"
-            data-reveal>Nuestros principios</h2>
-          <p class="lead mt-5 md:text-justify md:hyphens-auto" data-reveal style="--reveal-delay:90ms">
+          <h2 class="mt-5 titulo-seccion" data-reveal>Nuestros principios</h2>
+          <p class="lead texto-justo mt-5" data-reveal style="--reveal-delay:90ms">
             Los valores que orientan el trabajo de la red, tomados del programa publicado por Unamos.
           </p>
         </div>
 
         <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
           <article class="principio" data-reveal>
-            <span class="principio__icono" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24"
-                height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <line x1="3" x2="21" y1="22" y2="22" />
-                <line x1="6" x2="6" y1="18" y2="11" />
-                <line x1="10" x2="10" y1="18" y2="11" />
-                <line x1="14" x2="14" y1="18" y2="11" />
-                <line x1="18" x2="18" y1="18" y2="11" />
-                <polygon points="12 2 20 7 4 7" />
-              </svg></span>
+            <span class="principio__icono" aria-hidden="true"><svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use href="#i-democracia"></use></svg></span>
             <h3 class="principio__titulo">Democracia</h3>
-            <p class="principio__texto md:text-justify md:hyphens-auto">Participación en los asuntos públicos y respeto a las instituciones
+            <p class="principio__texto texto-justo">Participación en los asuntos públicos y respeto a las instituciones
               democráticas.</p>
           </article>
 
           <article class="principio" data-reveal style="--reveal-delay:60ms">
-            <span class="principio__icono" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24"
-                height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path
-                  d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
-              </svg></span>
+            <span class="principio__icono" aria-hidden="true"><svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use href="#i-corazon"></use></svg></span>
             <h3 class="principio__titulo">Derechos humanos</h3>
-            <p class="principio__texto md:text-justify md:hyphens-auto">Respeto, promoción y defensa de los derechos humanos de todas las personas.</p>
+            <p class="principio__texto texto-justo">Respeto, promoción y defensa de los derechos humanos de todas las personas.</p>
           </article>
 
           <article class="principio" data-reveal style="--reveal-delay:120ms">
-            <span class="principio__icono" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24"
-                height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path
-                  d="M12.67 19a2 2 0 0 0 1.416-.588l6.154-6.172a6 6 0 0 0-8.49-8.49L5.586 9.914A2 2 0 0 0 5 11.328V18a1 1 0 0 0 1 1z" />
-                <path d="M16 8 2 22" />
-                <path d="M17.5 15H9" />
-              </svg></span>
+            <span class="principio__icono" aria-hidden="true"><svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use href="#i-pluma"></use></svg></span>
             <h3 class="principio__titulo">Libertades</h3>
-            <p class="principio__texto md:text-justify md:hyphens-auto">Libertad de expresión, de organización y de participación ciudadana.</p>
+            <p class="principio__texto texto-justo">Libertad de expresión, de organización y de participación ciudadana.</p>
           </article>
 
           <article class="principio" data-reveal style="--reveal-delay:180ms">
-            <span class="principio__icono" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24"
-                height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-                <circle cx="9" cy="7" r="4" />
-                <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
-                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-              </svg></span>
+            <span class="principio__icono" aria-hidden="true"><svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use href="#i-personas"></use></svg></span>
             <h3 class="principio__titulo">Inclusión</h3>
-            <p class="principio__texto md:text-justify md:hyphens-auto">Sin discriminación ni marginación; equidad y valoración de la juventud.</p>
+            <p class="principio__texto texto-justo">Sin discriminación ni marginación; equidad y valoración de la juventud.</p>
           </article>
 
           <article class="principio" data-reveal style="--reveal-delay:240ms">
-            <span class="principio__icono" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24"
-                height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" />
-              </svg></span>
+            <span class="principio__icono" aria-hidden="true"><svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use href="#i-mensaje"></use></svg></span>
             <h3 class="principio__titulo">Diálogo</h3>
-            <p class="principio__texto md:text-justify md:hyphens-auto">Escucha y diálogo entre generaciones y con la sociedad nicaragüense.</p>
+            <p class="principio__texto texto-justo">Escucha y diálogo entre generaciones y con la sociedad nicaragüense.</p>
           </article>
         </div>
       </div>
     </section>
 
     <!-- ÁMBITOS DE TRABAJO -->
-    <section id="ambitos" class="mx-auto max-w-[1280px] px-6 py-20 md:px-10 md:py-24">
+    <section id="ambitos" class="contenedor py-20 md:py-24">
       <div class="max-w-3xl">
         <p class="eyebrow eyebrow--azul" data-reveal>Trabajo</p>
-        <h2 class="mt-5 font-display text-[clamp(2rem,4vw,3.1rem)] font-extrabold leading-tight tracking-tight"
-          data-reveal>Ámbitos de trabajo</h2>
-        <p class="lead mt-5 md:text-justify md:hyphens-auto" data-reveal style="--reveal-delay:90ms">
+        <h2 class="mt-5 titulo-seccion" data-reveal>Ámbitos de trabajo</h2>
+        <p class="lead texto-justo mt-5" data-reveal style="--reveal-delay:90ms">
           Líneas de objetivo en las que se organiza el trabajo de la red.
         </p>
       </div>
@@ -261,71 +218,47 @@
 
         <div data-ambitos data-reveal="der">
           <div class="punto punto--azul">
-            <span class="punto__icono punto__icono--azul" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg"
-                width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path
-                  d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z" />
-                <path d="M22 10v6" />
-                <path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5" />
-              </svg></span>
+            <span class="punto__icono punto__icono--azul" aria-hidden="true"><svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use href="#i-graduacion"></use></svg></span>
             <div>
-              <h3 class="font-display text-[0.82rem] font-extrabold uppercase tracking-[0.14em] text-tinta">Formación
+              <h3 class="punto__titulo--etiqueta">Formación
                 ciudadana</h3>
-              <p class="mt-1.5 text-[0.95rem] leading-relaxed text-gris md:text-justify md:hyphens-auto">Impulsar la formación política y ciudadana
+              <p class="texto-secundario texto-justo mt-1.5">Impulsar la formación política y ciudadana
                 de las y los jóvenes, con herramientas para participar de manera informada.</p>
             </div>
           </div>
 
           <div class="punto punto--azul">
-            <span class="punto__icono punto__icono--azul" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg"
-                width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-                <circle cx="9" cy="7" r="4" />
-                <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
-                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-              </svg></span>
+            <span class="punto__icono punto__icono--azul" aria-hidden="true"><svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use href="#i-personas"></use></svg></span>
             <div>
-              <h3 class="font-display text-[0.82rem] font-extrabold uppercase tracking-[0.14em] text-tinta">
+              <h3 class="punto__titulo--etiqueta">
                 Participación
                 juvenil</h3>
-              <p class="mt-1.5 text-[0.95rem] leading-relaxed text-gris md:text-justify md:hyphens-auto">Promover una participación política activa,
+              <p class="texto-secundario texto-justo mt-1.5">Promover una participación política activa,
                 plural y responsable, y generar espacios donde las juventudes aporten.</p>
             </div>
           </div>
 
           <div class="punto punto--azul">
-            <span class="punto__icono punto__icono--azul" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg"
-                width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z" />
-                <line x1="4" x2="4" y1="22" y2="15" />
-              </svg></span>
+            <span class="punto__icono punto__icono--azul" aria-hidden="true"><svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use href="#i-banderas"></use></svg></span>
             <div>
-              <h3 class="font-display text-[0.82rem] font-extrabold uppercase tracking-[0.14em] text-tinta">Liderazgo
+              <h3 class="punto__titulo--etiqueta">Liderazgo
               </h3>
-              <p class="mt-1.5 text-[0.95rem] leading-relaxed text-gris md:text-justify md:hyphens-auto">Fortalecer nuevos liderazgos juveniles
+              <p class="texto-secundario texto-justo mt-1.5">Fortalecer nuevos liderazgos juveniles
                 capaces de representar a sus comunidades y de impulsar cambios.</p>
             </div>
           </div>
 
           <div class="punto punto--azul">
-            <span class="punto__icono punto__icono--azul" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg"
-                width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path d="M14 9a2 2 0 0 1-2 2H6l-4 4V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2z" />
-                <path d="M18 9h2a2 2 0 0 1 2 2v11l-4-4h-6a2 2 0 0 1-2-2v-1" />
-              </svg></span>
+            <span class="punto__icono punto__icono--azul" aria-hidden="true"><svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use href="#i-dialogo"></use></svg></span>
             <div>
-              <h3 class="font-display text-[0.82rem] font-extrabold uppercase tracking-[0.14em] text-tinta">Diálogo y
+              <h3 class="punto__titulo--etiqueta">Diálogo y
                 propuestas</h3>
-              <p class="mt-1.5 text-[0.95rem] leading-relaxed text-gris md:text-justify md:hyphens-auto">Abrir espacios de diálogo para debatir ideas,
+              <p class="texto-secundario texto-justo mt-1.5">Abrir espacios de diálogo para debatir ideas,
                 capacidades y propuestas ante los desafíos del país.</p>
             </div>
           </div>
 
-          <p class="mt-8 text-xs leading-relaxed text-gris/75 md:text-justify md:hyphens-auto">
+          <p class="texto-nota texto-justo mt-8">
             Son líneas de objetivo; las actividades concretas se anuncian en la sección
             <a class="font-semibold text-azul underline-offset-2 hover:underline"
               href="{% url 'actividades' %}">Actividades</a>.
@@ -338,12 +271,11 @@
 
     <!-- TRAYECTORIA -->
     <section id="trayectoria" class="border-y border-tinta/10 bg-hueso">
-      <div class="mx-auto max-w-[1280px] px-6 py-20 md:px-10 md:py-24">
+      <div class="contenedor py-20 md:py-24">
         <div class="max-w-3xl">
           <p class="eyebrow" data-reveal>Trayectoria</p>
-          <h2 class="mt-5 font-display text-[clamp(2rem,4vw,3.1rem)] font-extrabold leading-tight tracking-tight"
-            data-reveal>Nuestra trayectoria</h2>
-          <p class="lead mt-5 md:text-justify md:hyphens-auto" data-reveal style="--reveal-delay:90ms">
+          <h2 class="mt-5 titulo-seccion" data-reveal>Nuestra trayectoria</h2>
+          <p class="lead texto-justo mt-5" data-reveal style="--reveal-delay:90ms">
             Referencias documentadas en el sitio oficial de Unamos.
           </p>
         </div>
@@ -355,18 +287,13 @@
               <span class="chip chip--azul">Opinión</span>
             </div>
             <h3 class="hito__titulo">«¿Estamos listos los jóvenes para cambiar el país?»</h3>
-            <p class="hito__texto md:text-justify md:hyphens-auto">
+            <p class="hito__texto texto-justo">
               Artículo de opinión de Luis A. Blandón, Enlace Nacional de la Juventud Renovadora, sobre el papel de la
               juventud en la vida pública del país.
             </p>
             <a class="link-arrow link-arrow--azul mt-auto text-sm"
               href="https://unamosnic.org/estamos-listos-los-jovenes-para-cambiar-el-pais/" target="_blank"
-              rel="noopener noreferrer">Ver en unamosnic.org <svg xmlns="http://www.w3.org/2000/svg" width="24"
-                height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M5 12h14" />
-                <path d="m12 5 7 7-7 7" />
-              </svg><span class="sr-only">(se abre en una pestaña nueva)</span></a>
+              rel="noopener noreferrer">Ver en unamosnic.org <svg class="icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-flecha"></use></svg><span class="sr-only">(se abre en una pestaña nueva)</span></a>
           </article>
 
           <article class="hito">
@@ -375,18 +302,13 @@
               <span class="chip chip--azul">Organización</span>
             </div>
             <h3 class="hito__titulo">Asamblea de la Red de Jóvenes</h3>
-            <p class="hito__texto md:text-justify md:hyphens-auto">
+            <p class="hito__texto texto-justo">
               Elección de convencionales para la IX Convención Nacional, mediante proposiciones abiertas y voto directo
               y secreto.
             </p>
             <a class="link-arrow link-arrow--azul mt-auto text-sm"
               href="https://unamosnic.org/consulta-sobre-nombre-del-mrs-81-dice-que-debe-cambiarse/" target="_blank"
-              rel="noopener noreferrer">Ver en unamosnic.org <svg xmlns="http://www.w3.org/2000/svg" width="24"
-                height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M5 12h14" />
-                <path d="m12 5 7 7-7 7" />
-              </svg><span class="sr-only">(se abre en una pestaña nueva)</span></a>
+              rel="noopener noreferrer">Ver en unamosnic.org <svg class="icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-flecha"></use></svg><span class="sr-only">(se abre en una pestaña nueva)</span></a>
           </article>
 
           <article class="hito">
@@ -395,20 +317,15 @@
               <span class="chip chip--verde">Referencia</span>
             </div>
             <h3 class="hito__titulo">Ficha oficial «Nuestras redes sectoriales»</h3>
-            <p class="hito__texto md:text-justify md:hyphens-auto">
+            <p class="hito__texto texto-justo">
               Presentación vigente de Juventud Renovadora, con su descripción y canales oficiales.
             </p>
             <a class="link-arrow link-arrow--azul mt-auto text-sm" href="https://unamosnic.org/nuestras-redes/"
-              target="_blank" rel="noopener noreferrer">Ver en unamosnic.org <svg xmlns="http://www.w3.org/2000/svg"
-                width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M5 12h14" />
-                <path d="m12 5 7 7-7 7" />
-              </svg><span class="sr-only">(se abre en una pestaña nueva)</span></a>
+              target="_blank" rel="noopener noreferrer">Ver en unamosnic.org <svg class="icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-flecha"></use></svg><span class="sr-only">(se abre en una pestaña nueva)</span></a>
           </article>
         </div>
 
-        <p class="mt-6 max-w-3xl text-xs leading-relaxed text-gris/75 md:text-justify md:hyphens-auto" data-reveal>
+        <p class="texto-nota texto-justo mt-6 max-w-3xl" data-reveal>
           Cronología breve basada en publicaciones verificables; se irá ampliando con los hitos que la organización
           confirme.
         </p>
@@ -416,13 +333,13 @@
     </section>
 
     <!-- PREGUNTAS FRECUENTES -->
-    <section id="preguntas" class="mx-auto max-w-[1280px] px-6 py-20 md:px-10 md:py-24">
+    <section id="preguntas" class="contenedor py-20 md:py-24">
       <div class="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
         <div>
           <p class="eyebrow" data-reveal>Preguntas frecuentes</p>
           <h2 class="mt-5 font-display text-[clamp(1.9rem,3.5vw,2.6rem)] font-extrabold leading-tight tracking-tight"
             data-reveal>Lo que suelen preguntarnos</h2>
-          <p class="mt-5 text-[0.95rem] leading-relaxed text-gris md:text-justify md:hyphens-auto" data-reveal style="--reveal-delay:90ms">
+          <p class="texto-secundario texto-justo mt-5" data-reveal style="--reveal-delay:90ms">
             Respuestas breves basadas en la información oficial publicada por Unamos.
           </p>
         </div>
@@ -432,15 +349,11 @@
             <h3>
               <button class="faq__pregunta" type="button" aria-expanded="false" aria-controls="faq-1" id="faq-btn-1">
                 <span>¿Qué es Juventud Renovadora?</span>
-                <span class="faq__icono" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24"
-                    height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <path d="m6 9 6 6 6-6" />
-                  </svg></span>
+                <span class="faq__icono" aria-hidden="true"><svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use href="#i-chevron"></use></svg></span>
               </button>
             </h3>
             <div class="faq__respuesta" id="faq-1" role="region" aria-labelledby="faq-btn-1" hidden>
-              <p class="md:text-justify md:hyphens-auto">
+              <p class="texto-justo">
                 Es el espacio de organización, participación y liderazgo juvenil de Unamos: una red que integra a
                 jóvenes de 16 a 35 años comprometidos con la construcción de una Nicaragua democrática, libre, justa e
                 inclusiva.
@@ -452,15 +365,11 @@
             <h3>
               <button class="faq__pregunta" type="button" aria-expanded="false" aria-controls="faq-2" id="faq-btn-2">
                 <span>¿Quiénes pueden integrarse?</span>
-                <span class="faq__icono" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24"
-                    height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <path d="m6 9 6 6 6-6" />
-                  </svg></span>
+                <span class="faq__icono" aria-hidden="true"><svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use href="#i-chevron"></use></svg></span>
               </button>
             </h3>
             <div class="faq__respuesta" id="faq-2" role="region" aria-labelledby="faq-btn-2" hidden>
-              <p class="md:text-justify md:hyphens-auto">
+              <p class="texto-justo">
                 Según la descripción oficial, la red está integrada por jóvenes de 16 a 35 años. Las convocatorias de
                 incorporación se anuncian en los canales oficiales de Juventud Renovadora y en la web de Unamos.
               </p>
@@ -471,15 +380,11 @@
             <h3>
               <button class="faq__pregunta" type="button" aria-expanded="false" aria-controls="faq-3" id="faq-btn-3">
                 <span>¿Juventud Renovadora es un partido político?</span>
-                <span class="faq__icono" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24"
-                    height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <path d="m6 9 6 6 6-6" />
-                  </svg></span>
+                <span class="faq__icono" aria-hidden="true"><svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use href="#i-chevron"></use></svg></span>
               </button>
             </h3>
             <div class="faq__respuesta" id="faq-3" role="region" aria-labelledby="faq-btn-3" hidden>
-              <p class="md:text-justify md:hyphens-auto">
+              <p class="texto-justo">
                 No. Juventud Renovadora es la red juvenil de Unamos, el partido político nicaragüense al que pertenece.
                 La historia, el liderazgo y las propuestas del partido se publican en su sitio oficial.
               </p>
@@ -490,15 +395,11 @@
             <h3>
               <button class="faq__pregunta" type="button" aria-expanded="false" aria-controls="faq-4" id="faq-btn-4">
                 <span>¿Cómo puedo participar en sus actividades?</span>
-                <span class="faq__icono" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24"
-                    height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <path d="m6 9 6 6 6-6" />
-                  </svg></span>
+                <span class="faq__icono" aria-hidden="true"><svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use href="#i-chevron"></use></svg></span>
               </button>
             </h3>
             <div class="faq__respuesta" id="faq-4" role="region" aria-labelledby="faq-btn-4" hidden>
-              <p class="md:text-justify md:hyphens-auto">
+              <p class="texto-justo">
                 Sigue los canales oficiales de Juventud Renovadora, donde se publican las convocatorias, y consulta la
                 agenda en la sección
                 <a class="font-semibold text-azul underline-offset-2 hover:underline"
@@ -513,15 +414,11 @@
             <h3>
               <button class="faq__pregunta" type="button" aria-expanded="false" aria-controls="faq-5" id="faq-btn-5">
                 <span>¿Dónde encuentro más información oficial?</span>
-                <span class="faq__icono" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="24"
-                    height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <path d="m6 9 6 6 6-6" />
-                  </svg></span>
+                <span class="faq__icono" aria-hidden="true"><svg class="icon" width="24" height="24" viewBox="0 0 24 24"><use href="#i-chevron"></use></svg></span>
               </button>
             </h3>
             <div class="faq__respuesta" id="faq-5" role="region" aria-labelledby="faq-btn-5" hidden>
-              <p class="md:text-justify md:hyphens-auto">
+              <p class="texto-justo">
                 En
                 <a class="font-semibold text-azul underline-offset-2 hover:underline"
                   href="https://unamosnic.org/nuestras-redes/" target="_blank"
@@ -545,70 +442,39 @@
 
     <!-- CONTACTO E INFORMACIÓN -->
     <section id="contacto" class="bg-azul-suave">
-      <div class="mx-auto grid max-w-[1280px] gap-12 px-6 py-20 md:px-10 md:py-24 lg:grid-cols-2 lg:gap-20">
+      <div class="contenedor grid gap-12 py-20 md:py-24 lg:grid-cols-2 lg:gap-20">
         <div>
           <p class="eyebrow eyebrow--azul" data-reveal>Contacto</p>
-          <h2 class="mt-5 font-display text-[clamp(2rem,4vw,3.1rem)] font-extrabold leading-tight tracking-tight"
-            data-reveal>Contacto e información</h2>
-          <p class="lead mt-5 md:text-justify md:hyphens-auto" data-reveal style="--reveal-delay:90ms">
+          <h2 class="mt-5 titulo-seccion" data-reveal>Contacto e información</h2>
+          <p class="lead texto-justo mt-5" data-reveal style="--reveal-delay:90ms">
             Escríbenos a través del formulario de contacto o sigue los canales oficiales de Juventud Renovadora.
           </p>
           <div class="mt-8 flex flex-wrap gap-4" data-reveal style="--reveal-delay:150ms">
-            <a class="btn btn-azul" href="{% url 'contacto' %}">Ir a contacto <svg xmlns="http://www.w3.org/2000/svg"
-                width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M5 12h14" />
-                <path d="m12 5 7 7-7 7" />
-              </svg></a>
+            <a class="btn btn-azul" href="{% url 'contacto' %}">Ir a contacto <svg class="icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-flecha"></use></svg></a>
             <a class="btn btn-dark" href="https://unamosnic.org/" target="_blank" rel="noopener noreferrer">Web oficial
-              de Unamos <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                aria-hidden="true">
-                <path d="M7 7h10v10" />
-                <path d="M7 17 17 7" />
-              </svg><span class="sr-only">(se abre en una pestaña nueva)</span></a>
+              de Unamos <svg class="icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-externo"></use></svg><span class="sr-only">(se abre en una pestaña nueva)</span></a>
           </div>
         </div>
 
         <div class="space-y-4" data-canales-jr data-reveal="der">
           <a class="canal" href="https://www.facebook.com/unamosjuventud" target="_blank" rel="noopener noreferrer">
-            <span class="canal__icono"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" aria-hidden="true">
-                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-              </svg></span>
+            <span class="canal__icono"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-facebook"></use></svg></span>
             <span>
               <span class="canal__nombre">Facebook</span>
-              <span class="block text-xs text-gris">Canal oficial de Juventud Renovadora</span>
+              <span class="canal__detalle">Canal oficial de Juventud Renovadora</span>
             </span>
-            <span class="canal__flecha"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" aria-hidden="true">
-                <path d="M7 7h10v10" />
-                <path d="M7 17 17 7" />
-              </svg></span>
+            <span class="canal__flecha"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-externo"></use></svg></span>
             <span class="sr-only">(se abre en una pestaña nueva)</span>
           </a>
 
           <a class="canal" href="https://www.instagram.com/juventud_renovadora" target="_blank"
             rel="noopener noreferrer">
-            <span class="canal__icono"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" aria-hidden="true">
-                <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
-                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
-              </svg></span>
+            <span class="canal__icono"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-instagram"></use></svg></span>
             <span>
               <span class="canal__nombre">Instagram</span>
-              <span class="block text-xs text-gris">@juventud_renovadora</span>
+              <span class="canal__detalle">@juventud_renovadora</span>
             </span>
-            <span class="canal__flecha"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" aria-hidden="true">
-                <path d="M7 7h10v10" />
-                <path d="M7 17 17 7" />
-              </svg></span>
+            <span class="canal__flecha"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-externo"></use></svg></span>
             <span class="sr-only">(se abre en una pestaña nueva)</span>
           </a>
 
@@ -620,35 +486,19 @@
               </svg></span>
             <span>
               <span class="canal__nombre">X</span>
-              <span class="block text-xs text-gris">@Juventud_UNAMOS</span>
+              <span class="canal__detalle">@Juventud_UNAMOS</span>
             </span>
-            <span class="canal__flecha"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" aria-hidden="true">
-                <path d="M7 7h10v10" />
-                <path d="M7 17 17 7" />
-              </svg></span>
+            <span class="canal__flecha"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-externo"></use></svg></span>
             <span class="sr-only">(se abre en una pestaña nueva)</span>
           </a>
 
           <a class="canal" href="https://unamosnic.org/" target="_blank" rel="noopener noreferrer">
-            <span class="canal__icono"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" aria-hidden="true">
-                <circle cx="12" cy="12" r="10" />
-                <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" />
-                <path d="M2 12h20" />
-              </svg></span>
+            <span class="canal__icono"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-globo"></use></svg></span>
             <span>
               <span class="canal__nombre">Web oficial de Unamos</span>
-              <span class="block text-xs text-gris">Sitio institucional</span>
+              <span class="canal__detalle">Sitio institucional</span>
             </span>
-            <span class="canal__flecha"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" aria-hidden="true">
-                <path d="M7 7h10v10" />
-                <path d="M7 17 17 7" />
-              </svg></span>
+            <span class="canal__flecha"><svg class="icon" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><use href="#i-externo"></use></svg></span>
             <span class="sr-only">(se abre en una pestaña nueva)</span>
           </a>
         </div>
