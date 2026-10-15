@@ -2101,6 +2101,26 @@
   padding: 4rem 1.5rem;
 }
 
+/* Móvil: contenido del pie centrado. */
+@media (max-width: 767px) {
+  .pie__grid {
+    justify-items: center;
+    text-align: center;
+  }
+
+  .pie__intro {
+    margin-inline: auto;
+  }
+
+  .pie__lista {
+    align-items: center;
+  }
+
+  .pie__social {
+    justify-content: center;
+  }
+}
+
 @media (min-width: 768px) {
   .pie__grid {
     grid-template-columns: 1fr 1fr;
